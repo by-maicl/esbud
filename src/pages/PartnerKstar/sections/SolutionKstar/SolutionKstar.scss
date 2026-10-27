@@ -1,0 +1,50 @@
+@use '../../../../styles/variables' as *;
+
+.solutionKstar {
+    padding: 80px 8%;
+    background-color: $secondary-color;
+
+    &__header {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+
+        p {
+            color: rgba($secondary-font-color, $alpha: 0.8);
+        }
+    }
+
+    &__cards {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    &__card {
+        display: grid;
+        grid-template-columns: 80px 0.5fr minmax(0, 1fr) 20px;
+        align-items: center;
+        padding: 25px 0;
+        border-bottom: 1px solid rgba($secondary-font-color, 0.15);
+
+        &-id {
+            font-weight: 600;
+            color: $kstar-solution-accent;
+        }
+
+        &-title {
+            font-size: 24px;
+            font-weight: 500;
+            color: $secondary-font-color;
+        }
+
+        &-description {
+            font-size: 14px;
+            color: rgba($secondary-font-color, $alpha: 0.6);
+        }
+
+        &-icon {
+            color: $kstar-solution-accent;
+        }
+    }
+}

@@ -1,0 +1,28 @@
+.arrowButton {
+  padding: 12px;
+  border-radius: 100px;
+  background-color: #154579;
+  border: none;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.arrowButton div {
+  padding: 12px;
+  border-radius: 100px;
+  background-color: #FFF;
+  display: flex;
+}
+.arrowButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.arrowButton:hover:not(:disabled) {
+  background-color: #001F40;
+}
+.arrowButton:hover:not(:disabled) div {
+  background-color: #E3E9EF;
+}/*# sourceMappingURL=ArrowButton.css.map */

@@ -1,0 +1,76 @@
+@use '../../../../styles/variables' as *;
+
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: end;
+
+    &__backgroung {
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        height: inherit;
+        margin: 15px;
+        margin-top: 5px;
+    }
+
+    &__layer-1 {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        background-image: url('../../../../assets/home-img/hero/layer-1.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        border-radius: 30px;
+    }
+
+    &__layer-text {
+        position: absolute;
+        inset: 0;
+        z-index: 2;
+        margin-top: 160px;
+
+        h1 {
+            font-size: 140px;
+            font-weight: 900;
+            color: $secondary-font-color;
+            text-transform: uppercase;
+            text-align: center;
+            letter-spacing: 5%;
+            text-shadow: 0 0 20px rgba($primary-font-color, 0.1);
+        }
+    }
+
+    &__layer-2 {
+        position: absolute;
+        inset: 0;
+        z-index: 3;
+        background-image:
+            linear-gradient(transparent 50%, rgba(0, 0, 0, 80%)),
+            url('../../../../assets/home-img/hero/layer-2.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        border-radius: 30px;
+    }
+
+    &__info {
+        margin-left: 8%;
+        margin-bottom: 150px;
+        color: $secondary-font-color;
+        width: 40%;
+
+        h2 {
+            font-size: 40px;
+            font-weight: 700;
+            letter-spacing: 3%;
+        }
+
+        p {
+            font-size: 16px;
+            font-weight: 400;
+            margin-top: 12px;
+        }
+    }
+}

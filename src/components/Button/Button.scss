@@ -1,0 +1,73 @@
+@use '../../styles/variables' as *;
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 10px 12px 10px 20px;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+
+    &__icon {
+        background-color: $background-color;
+        border-radius: 100px;
+        padding: 10px;
+        display: flex;
+
+        svg {
+            flex-shrink: 0;
+        }
+    }
+
+    &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+
+    &--primary {
+        background-color: $primary-color;
+        color: $secondary-font-color;
+
+        svg {
+            color: $primary-font-color;
+        }
+
+        &:hover:not(:disabled) {
+            background-color: $secondary-color;
+
+            div {
+                background-color: $secondary-background-color;
+            }
+        }
+    }
+
+    &--secondary {
+        background-color: $background-color;
+        color: $primary-color;
+
+        div {
+            background-color: $primary-color;
+        }
+
+        svg {
+            color: $secondary-font-color;
+        }
+
+        &:hover:not(:disabled) {
+            background-color: $secondary-color;
+            color: $secondary-font-color;
+
+            div {
+                background-color: $background-color;
+            }
+
+            svg {
+                color: $primary-color;
+            }
+        }
+    }
+}

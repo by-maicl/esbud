@@ -1,0 +1,15 @@
+.icon {
+  border-radius: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+.icon--primary {
+  background-color: #154579;
+  color: #FFF;
+}
+.icon--secondary {
+  background-color: #FFF;
+  color: #154579;
+}/*# sourceMappingURL=IconBlock.css.map */

@@ -1,0 +1,46 @@
+@use '../../styles/variables' as *;
+
+.card {
+    width: 100%;
+    height: 250px;
+    padding: 25px;
+    background-color: $background-color;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    outline-offset: -1px;
+    border-radius: 18px;
+    box-shadow: 0 15px 40px rgba(#000, $alpha: 0.1);
+    transition: all 0.3s ease;
+
+    &:hover {
+        background-color: $primary-color;
+        outline: 1px solid $secondary-color;
+    }
+
+    &__text {
+        margin-top: 10px;
+    }
+
+    &--primary {
+        outline: 1px solid $secondary-background-color;
+    }
+
+    &--kstar {
+        background-color: $kstar-card-background;
+        height: 100%;
+        min-height: 250px;
+        outline: 1px solid rgba($footer-primary, $alpha: 0.5);
+    }
+
+    &--growatt {
+        outline: 1px solid $card-border;
+    }
+
+    &--growatt:hover {
+        background-color: $growatt-primary-color;
+        outline: 1px solid rgba(#70B62D, 0.5);
+    }
+}

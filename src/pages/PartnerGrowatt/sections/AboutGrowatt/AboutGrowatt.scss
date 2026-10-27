@@ -1,0 +1,46 @@
+@use '../../../../styles/variables' as *;
+
+.aboutGrowatt {
+    padding: 80px 8%;
+    display: grid;
+    grid-template-columns: 30% 70%;
+    gap: 100px;
+
+    &__stats {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        &-card {
+            padding: 10px;
+            border-bottom: 1px solid $growatt-primary-color;
+        }
+
+        h2 {
+            font-size: 48px;
+            font-weight: 500;
+            color: $growatt-primary-font-color;
+            letter-spacing: -4%;
+        }
+
+        p {
+            font-size: 24px;
+            font-weight: 500;
+            color: $growatt-text-color;
+            margin-top: 10px;
+        }
+    }
+
+    &__subtitle {
+        margin-top: 45px;
+        line-height: 1.2;
+        letter-spacing: -2%;
+    }
+
+    &__description {
+        margin-top: 20px;
+        font-size: 22px;
+        color: $growatt-text-color;
+        line-height: 1.2;
+    }
+}

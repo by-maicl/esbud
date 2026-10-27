@@ -1,0 +1,91 @@
+@use '../../../../styles/variables' as *;
+
+.heroGrowatt {
+    background-color: $growatt-hero-background;
+    margin: 15px;
+    padding: 42px 8%;
+    border-radius: 30px;
+
+    &__path {
+        color: $hero-subtitle;
+        font-size: 12px;
+        color: #52657A;
+    }
+
+    &__wrapp {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        align-items: center;
+        margin: 80px 0 90px 0;
+    }
+
+    &__title {
+        color: $secondary-color;
+        font-size: 52px;
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        gap: 45px;
+
+        p {
+            margin-top: -20px;
+            color: #52657A;
+        }
+    }
+
+    &__btn {
+        width: 50%;
+    }
+
+    &__using {
+        display: flex;
+        gap: 12px;
+    }
+
+    &__img {
+        background-color: $background-color;
+        border-radius: 24px;
+        width: 90%;
+        justify-self: end;
+
+        &-header {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        &-name {
+            color: $primary-color;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+
+        &-particle {
+            width: 32px;
+            height: 4px;
+            border-radius: 100px;
+            background-color: $growatt-primary-color;
+        }
+
+        img {
+            display: block;
+            margin: 0 auto;
+            width: 100%;
+            object-fit: cover;
+            height: auto;
+            max-height: 450px;
+            transform: scale(0.9);
+        }
+
+        &-info {
+            display: flex;
+            align-items: center;
+            color: #52657A;
+            font-size: 14px;
+            font-weight: 300;
+            padding: 20px;
+        }
+    }
+}

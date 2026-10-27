@@ -1,0 +1,19 @@
+@use '../../styles/variables' as *;
+
+.category {
+    border-radius: 100px;
+    padding: 10px 15px;
+    width: fit-content;
+    font-size: 14px;
+    font-weight: 300;
+
+    &--primary {
+        border: 1px solid rgba($background-color, 0.2);
+        color: $hero-subtitle;
+    }
+
+    &--secondary {
+        border: 1px solid #CCD8E3;
+        color: $primary-color;
+    }
+}

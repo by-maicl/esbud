@@ -1,0 +1,17 @@
+@use '../../../../styles/variables' as *;
+
+.directions {
+    padding: 65px 8%;
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__cards {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 16px;
+        margin-top: 45px;
+    }
+}

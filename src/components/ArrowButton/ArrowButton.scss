@@ -1,0 +1,32 @@
+@use '../../styles/variables' as *;
+
+.arrowButton {
+    padding: 12px;
+    border-radius: 100px;
+    background-color: $primary-color;
+    border: none;
+    width: fit-content;
+    height: fit-content;
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+    div {
+        padding: 12px;
+        border-radius: 100px;
+        background-color: $background-color;
+        display: flex;
+    }
+
+    &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+
+    &:hover:not(:disabled) {
+        background-color: $secondary-color;
+
+        div {
+            background-color: $secondary-background-color;
+        }
+    }
+}

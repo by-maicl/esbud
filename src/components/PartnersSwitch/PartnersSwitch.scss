@@ -1,0 +1,31 @@
+@use '../../styles/variables' as *;
+
+.partnersSwitch {
+    padding: 40px 8%;
+
+    &__nav {
+        display: flex;
+        width: 100%;
+        font-size: 36px;
+    }
+
+    &__element--kstar,
+    &__element--growatt {
+        width: 100%;
+        text-align: center;
+        color: rgba($primary-font-color, 0.5);
+        border-bottom: 1px solid rgba($primary-font-color, 0.5);
+    }
+
+    &__element--kstar.active {
+        color: $primary-color;
+        font-weight: 500;
+        border-bottom: 2px solid $primary-color;
+    }
+
+    &__element--growatt.active {
+        color: $growatt-primary-color;
+        font-weight: 500;
+        border-bottom: 2px solid $growatt-primary-color;
+    }
+}

@@ -1,0 +1,112 @@
+@use '../../styles/variables' as *;
+
+.footer {
+    background-color: $primary-color;
+    padding: 70px 64px 25px 64px;
+    color: $secondary-font-color;
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        position: relative;
+    }
+
+    &__company-grid {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+
+        h2 {
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        p {
+            font-size: 12px;
+            text-transform: uppercase;
+            color: rgba($secondary-font-color, 0.65);
+            margin-top: 1px;
+            letter-spacing: 8%;
+        }
+    }
+
+    &__logo {
+        background-color: $footer-primary;
+        border-radius: 100px;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            width: 30px;
+            height: 35px;
+        }
+    }
+
+    &__social {
+        display: flex;
+        gap: 10px;
+        position: absolute;
+        bottom: 0;
+
+        img {
+            width: 17px;
+            height: 17px;
+        }
+    }
+
+    &__social-icon {
+        padding: 15px;
+        border-radius: 100px;
+        background-color: rgba($background-color, 0.07);
+        display: flex;
+    }
+
+    &__element {
+        display: flex;
+        flex-direction: column;
+        gap: 13px;
+
+        p,
+        a {
+            width: fit-content;
+            color: rgba($secondary-font-color, 0.7);
+            font-size: 14px;
+            cursor: pointer;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    &__title {
+        color: $footer-primary;
+        font-size: 14px;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 8%;
+    }
+
+    &__company-name {
+        font-size: 96px;
+        font-weight: 400;
+        color: rgba($secondary-font-color, 0.07);
+        margin-top: 45px;
+    }
+
+    &__subtext {
+        border-top: 2px solid rgba($background-color, 0.15);
+        margin-top: 45px;
+        display: flex;
+        justify-content: space-between;
+        padding-top: 20px;
+
+        p {
+            color: rgba($secondary-font-color, 0.5);
+            font-size: 12px;
+        }
+    }
+}

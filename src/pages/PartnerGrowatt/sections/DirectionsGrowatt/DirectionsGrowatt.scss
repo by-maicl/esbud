@@ -1,0 +1,22 @@
+@use '../../../../styles/variables' as *;
+
+.directionsGrowatt {
+    padding: 80px 8%;
+    background-color: $growatt-section-background;
+
+    &__header {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        &-subtitle {
+            color: $growatt-text-color;
+        }
+    }
+
+    &__cards {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 16px;
+        margin-top: 45px;
+    }
+}

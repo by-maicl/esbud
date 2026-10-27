@@ -1,0 +1,31 @@
+@use '../../styles/variables' as *;
+
+.contactSection {
+    padding: 80px 8%;
+    display: grid;
+    grid-template-columns: 80% 20%;
+    align-items: center;
+    gap: 10px;
+
+    &__title {
+        font-size: 50px;
+        margin-bottom: 20px;
+    }
+
+    &__btn {
+        height: fit-content;
+        width: 100%;
+    }
+
+    &--kstar {
+        background-color: $secondary-background-color;
+    }
+
+    &--growatt {
+        background-color: transparent;
+    }
+
+    &--modular-houses {
+        background-color: $secondary-color;
+    }
+}

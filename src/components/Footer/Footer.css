@@ -1,0 +1,96 @@
+.footer {
+  background-color: #154579;
+  padding: 70px 64px 25px 64px;
+  color: #FFF;
+}
+.footer__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  position: relative;
+}
+.footer__company-grid {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.footer__company-grid h2 {
+  font-size: 16px;
+  font-weight: 600;
+}
+.footer__company-grid p {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.65);
+  margin-top: 1px;
+  letter-spacing: 8%;
+}
+.footer__logo {
+  background-color: #0F172A;
+  border-radius: 100px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer__logo img {
+  width: 30px;
+  height: 35px;
+}
+.footer__social {
+  display: flex;
+  gap: 10px;
+  position: absolute;
+  bottom: 0;
+}
+.footer__social img {
+  width: 17px;
+  height: 17px;
+}
+.footer__social-icon {
+  padding: 15px;
+  border-radius: 100px;
+  background-color: rgba(255, 255, 255, 0.07);
+  display: flex;
+}
+.footer__element {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+.footer__element p,
+.footer__element a {
+  width: -moz-fit-content;
+  width: fit-content;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  cursor: pointer;
+}
+.footer__element p:hover,
+.footer__element a:hover {
+  text-decoration: underline;
+}
+.footer__title {
+  color: #0F172A;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 8%;
+}
+.footer__company-name {
+  font-size: 96px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.07);
+  margin-top: 45px;
+}
+.footer__subtext {
+  border-top: 2px solid rgba(255, 255, 255, 0.15);
+  margin-top: 45px;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+}
+.footer__subtext p {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 12px;
+}/*# sourceMappingURL=Footer.css.map */

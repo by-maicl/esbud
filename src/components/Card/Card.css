@@ -1,0 +1,22 @@
+.card {
+  width: 100%;
+  height: 250px;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  outline-offset: -1px;
+  border-radius: 18px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+.card--blue {
+  outline: 1px solid #E3E9EF;
+}
+.card:hover {
+  background-color: #154579;
+  outline: 1px solid #001F40;
+}
+.card__text {
+  margin-top: 10px;
+}/*# sourceMappingURL=Card.css.map */

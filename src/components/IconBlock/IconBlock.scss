@@ -1,0 +1,29 @@
+@use '../../styles/variables' as *;
+
+.icon {
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+
+    &--primary {
+        background-color: $primary-color;
+        color: $secondary-font-color;
+    }
+
+    &--secondary {
+        background-color: $background-color;
+        color: $primary-color;
+    }
+
+    &--growatt-primary {
+        background-color: $growatt-primary-color;
+        color: $secondary-font-color;
+    }
+
+    &--growatt-secondary {
+        background-color: $background-color;
+        color: $growatt-primary-color;
+    }
+}

@@ -1,0 +1,67 @@
+@use '../../../../styles/variables' as *;
+
+.heroKstar {
+    background-color: $primary-color;
+    margin: 15px;
+    padding: 42px 8%;
+    border-radius: 30px;
+
+    &__path {
+        color: $hero-subtitle;
+        font-size: 12px;
+    }
+
+    &__wrapp {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        align-items: center;
+        margin: 80px 0 90px 0;
+    }
+
+    &__title {
+        color: $secondary-font-color;
+        font-size: 52px;
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        gap: 45px;
+
+        p {
+            margin-top: -20px;
+            color: $hero-subtitle;
+        }
+    }
+
+    &__btn {
+        width: 50%;
+    }
+
+    &__using {
+        display: flex;
+        gap: 12px;
+    }
+
+    &__img {
+        background-color: $secondary-color;
+        border-radius: 24px;
+        width: 90%;
+        justify-self: end;
+
+        img {
+            width: 100%;
+            object-fit: cover;
+            border-radius: 24px 24px 0 0;
+        }
+
+        p {
+            display: flex;
+            align-items: center;
+            color: $secondary-font-color;
+            font-size: 14px;
+            font-weight: 300;
+            padding: 20px;
+        }
+    }
+}

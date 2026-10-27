@@ -1,0 +1,42 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 0 12px 0 20px;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+.button__icon {
+  background-color: #FFF;
+  border-radius: 100px;
+  padding: 10px;
+  display: flex;
+}
+.button__icon svg {
+  flex-shrink: 0;
+}
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.button--primary {
+  background-color: #154579;
+  color: #FFF;
+}
+.button--primary:hover:not(:disabled) {
+  background-color: #001F40;
+}
+.button--primary:hover:not(:disabled) div {
+  background-color: #E3E9EF;
+}
+.button--secondary {
+  background-color: #FFF;
+  color: #154579;
+}
+.button--secondary:hover:not(:disabled) {
+  background-color: rgba(21, 69, 121, 0.15);
+}/*# sourceMappingURL=Button.css.map */
