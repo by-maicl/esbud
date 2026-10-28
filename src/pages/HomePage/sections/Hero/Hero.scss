@@ -1,9 +1,12 @@
 @use '../../../../styles/variables' as *;
 
 .hero {
+    min-height: 100vh;
     height: 100vh;
     display: flex;
-    align-items: end;
+    align-items: flex-end;
+    position: relative;
+    box-sizing: border-box;
 
     &__backgroung {
         position: absolute;
@@ -30,6 +33,7 @@
         inset: 0;
         z-index: 2;
         margin-top: 160px;
+        pointer-events: none;
 
         h1 {
             font-size: 140px;
@@ -47,7 +51,7 @@
         inset: 0;
         z-index: 3;
         background-image:
-            linear-gradient(transparent 50%, rgba(0, 0, 0, 80%)),
+            linear-gradient(transparent 50%, rgba(0, 0, 0, 0.8)),
             url('../../../../assets/home-img/hero/layer-2.png');
         background-repeat: no-repeat;
         background-size: cover;
@@ -56,6 +60,8 @@
     }
 
     &__info {
+        position: relative;
+        z-index: 4;
         margin-left: 8%;
         margin-bottom: 150px;
         color: $secondary-font-color;
@@ -65,12 +71,92 @@
             font-size: 40px;
             font-weight: 700;
             letter-spacing: 3%;
+            line-height: 1.15;
         }
 
         p {
             font-size: 16px;
             font-weight: 400;
+            line-height: 1.5;
             margin-top: 12px;
+        }
+    }
+
+    // ==========================================
+    // Адаптив под мобильную версию (макет)
+    // ==========================================
+    @media (max-width: 768px) {
+        min-height: 100svh;
+        height: 100svh;
+
+        &__backgroung {
+            margin: 8px;
+            margin-top: 0;
+        }
+
+        &__layer-1,
+        &__layer-2 {
+            border-radius: 20px;
+            background-position: center 65%; // Центрируем крышу дома под мобильный экран
+        }
+
+        &__layer-2 {
+            // Более плавный градиент снизу для четкого чтения белого текста
+            background-image:
+                linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.4) 45%, transparent 70%),
+                url('../../../../assets/home-img/hero/layer-2.png');
+        }
+
+        &__layer-text {
+            margin-top: 0;
+            top: 42%; // Располагаем над крышей дома ровно как в макете
+            transform: translateY(-50%);
+
+            h1 {
+                font-size: 26px;
+                letter-spacing: 1px;
+                padding: 0 10px;
+                white-space: nowrap;
+            }
+        }
+
+        &__info {
+            width: 100%;
+            margin-left: 0;
+            margin-bottom: 40px;
+            padding: 0 20px;
+
+            h2 {
+                font-size: 22px;
+                font-weight: 700;
+                line-height: 1.25;
+                letter-spacing: 0.5px;
+            }
+
+            p {
+                font-size: 12.5px;
+                line-height: 1.45;
+                margin-top: 10px;
+                opacity: 0.85;
+            }
+        }
+    }
+
+    @media (max-width: 380px) {
+        &__layer-text h1 {
+            font-size: 22px;
+        }
+
+        &__info {
+            margin-bottom: 25px;
+
+            h2 {
+                font-size: 20px;
+            }
+
+            p {
+                font-size: 11.5px;
+            }
         }
     }
 }

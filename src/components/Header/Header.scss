@@ -3,7 +3,10 @@
 .header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin: 20px 60px;
+    position: relative;
+    z-index: 50;
 
     &__logo {
         display: flex;
@@ -13,14 +16,17 @@
         font-weight: 500;
         font-size: 16px;
         line-height: 120%;
-        letter-spacing: 1%;
+        text-decoration: none;
+        color: inherit;
     }
 
     &__logo-img {
         width: 30px;
         height: 35px;
+        object-fit: contain;
     }
 
+    // Десктопный навбар
     &__nav {
         display: flex;
         align-items: center;
@@ -30,10 +36,15 @@
         border-radius: 30px;
         font-size: 16px;
 
-        a.active {
-            background-color: $header-active;
-            padding: 10px 6px;
-            border-radius: 100px;
+        a {
+            text-decoration: none;
+            color: inherit;
+
+            &.active {
+                background-color: $header-active;
+                padding: 10px 16px;
+                border-radius: 100px;
+            }
         }
     }
 
@@ -43,17 +54,18 @@
         &-title {
             display: flex;
             align-items: center;
-            gap: 3px;
+            gap: 4px;
             cursor: pointer;
 
             &.active {
                 background-color: $header-active;
-                padding: 10px 6px;
+                padding: 10px 16px;
                 border-radius: 100px;
             }
         }
 
         &-arrow {
+            font-size: 10px;
             transition: transform 0.3s ease;
 
             &.active {
@@ -63,26 +75,18 @@
 
         &-dropdown {
             position: absolute;
-            top: 100%;
-            left: -15px;
+            top: calc(100% + 15px);
+            left: 0;
             min-width: 150px;
             padding: 5px;
-
             display: flex;
             flex-direction: column;
-            gap: 2px;
-
             background-color: $header-background;
             border-radius: 15px;
-
             opacity: 0;
             visibility: hidden;
             transform: translateY(10px);
-
-            transition:
-                opacity 0.3s ease,
-                transform 0.3s ease,
-                visibility 0.3s ease;
+            transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
 
             &.open {
                 opacity: 1;
@@ -94,12 +98,217 @@
         &-link {
             padding: 10px;
             text-decoration: none;
-            transition: background-color 0.3s ease;
-            border-radius: 100px;
+            border-radius: 12px;
+            transition: background-color 0.2s ease;
 
-            &:hover {
+            &:hover,
+            &.active {
                 background-color: $header-active;
             }
         }
     }
+
+    // Бургер и мобильные элементы (по умолчанию скрыты)
+    &__burger-btn {
+        display: none;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 4px;
+        color: #111;
+    }
+
+    &__overlay {
+        display: none;
+    }
+
+    &__mobile-menu {
+        display: none;
+    }
+
+    // ==========================================
+    // Мобильная адаптация (max-width: 992px / 768px)
+    // ==========================================
+    @media (max-width: 992px) {
+        margin: 16px 20px;
+
+        &__nav,
+        &__desktop-btn {
+            display: none;
+        }
+
+        &__burger-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        // Затемняющий фон
+        &__overlay {
+            display: block;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.45);
+            backdrop-filter: blur(2px);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+            z-index: 998;
+
+            &.open {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+
+        // Выдвижное мобильное окно (как на макете справа)
+           @media (max-width: 992px) {
+    
+               // ...
+               &__mobile-menu {
+                   display: flex;
+                   flex-direction: column;
+                   position: fixed;
+                   top: 0;
+                   right: 0;
+                   width: 82%;
+                   max-width: 320px;
+                   height: 100vh;
+                   background: #ffffff;
+                   z-index: 9999;
+                   padding: 20px 24px 30px;
+                   box-shadow: -4px 0 24px rgba(0, 0, 0, 0.15);
+                   overflow-y: auto;
+    
+                   // По умолчанию спрятано за правым краем:
+                   transform: translateX(100%);
+                   transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    
+                   // Когда меню открыто:
+                   &.open {
+                       transform: translateX(0) !important;
+                   }
+               }
+           }
+        
+
+        &__mobile-top {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 12px;
+        }
+
+        &__close-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 4px;
+            color: #1a2a40;
+            display: flex;
+            align-items: center;
+        }
+
+        &__mobile-list {
+            display: flex;
+            flex-direction: column;
+        }
+
+        &__mobile-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 0;
+            font-size: 18px;
+            font-weight: 500;
+            color: #1a2a40;
+            text-decoration: none;
+            border-bottom: 1px solid #e2e8f0;
+
+            &--accordion {
+                cursor: pointer;
+            }
+        }
+
+        &__mobile-sublist {
+            display: flex;
+            flex-direction: column;
+            padding: 8px 0 12px 14px;
+            gap: 12px;
+        }
+
+        &__mobile-sublink {
+            text-decoration: none;
+            color: #4a5568;
+            font-size: 16px;
+
+            &.active {
+                font-weight: 600;
+                color: #1a2a40;
+            }
+        }
+
+        // Переключатель UA / EN
+        &__mobile-lang {
+            display: flex;
+            margin-top: 24px;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 24px;
+            gap: 20px;
+        }
+
+        &__lang-btn {
+            flex: 1;
+            background: none;
+            border: none;
+            padding: 8px 0;
+            font-size: 16px;
+            font-weight: 600;
+            color: #718096;
+            cursor: pointer;
+            position: relative;
+
+            &.active {
+                color: #1b497d;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: -24px; // прямо на линии границы
+                    left: 0;
+                    right: 0;
+                    height: 2px;
+                    background-color: #1b497d;
+                }
+            }
+        }
+
+        // Кнопка «Зв'язатися» со стрелкой
+        &__mobile-action-btn {
+            margin-top: auto;
+            padding: 8px 8px 8px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #194677;
+            color: #fff;
+            border: none;
+            border-radius: 40px;
+            font-size: 15px;
+            font-weight: 500;
+            cursor: pointer;
+            margin-top: 24px;
+        }
+
+        &__action-circle {
+            width: 32px;
+            height: 32px;
+            background: #ffffff;
+            color: #194677;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
 }

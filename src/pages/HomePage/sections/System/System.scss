@@ -4,6 +4,15 @@
     background-color: $secondary-background-color;
     padding: 65px 8%;
 
+    // Десктопный слайдер
+    &__desktop-slider {
+        display: block;
+    }
+
+    &__mobile-list {
+        display: none;
+    }
+
     &__slide--next {
         animation: system-enter-right 0.45s ease both;
     }
@@ -56,6 +65,78 @@
             transform: rotate(180deg);
         }
     }
+
+    // ==========================================
+    // Мобильная адаптация (согласно макету)
+    // ==========================================
+    @media (max-width: 768px) {
+        padding: 40px 20px;
+
+        &__desktop-slider {
+            display: none; // Скрываем слайдер со стрелками
+        }
+
+        &__mobile-list {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+            margin-top: 24px;
+        }
+
+        &__mobile-item {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        &__mobile-img-wrapper {
+            width: 100%;
+            height: 220px;
+            border-radius: 20px;
+            overflow: hidden;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+                display: block;
+            }
+        }
+
+        &__mobile-content {
+            h3 {
+                font-size: 20px;
+                font-weight: 500;
+                line-height: 1.25;
+                color: #0A1C30;
+                margin-bottom: 10px;
+            }
+
+            p {
+                font-size: 13px;
+                line-height: 1.5;
+                color: rgba(#0A1C30, 0.8);
+                margin: 0;
+            }
+        }
+    }
+
+    @media (max-width: 380px) {
+        &__mobile-img-wrapper {
+            height: 190px;
+        }
+
+        &__mobile-content {
+            h3 {
+                font-size: 18px;
+            }
+
+            p {
+                font-size: 12px;
+            }
+        }
+    }
 }
 
 @keyframes system-enter-right {
@@ -81,6 +162,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+
     .system__slide--next,
     .system__slide--prev {
         animation: none;

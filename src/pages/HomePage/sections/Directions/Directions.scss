@@ -6,6 +6,8 @@
     &__header {
         display: flex;
         justify-content: space-between;
+        align-items: flex-start;
+        gap: 30px;
     }
 
     &__cards {
@@ -13,5 +15,82 @@
         grid-template-columns: repeat(4, minmax(0, 1fr));
         gap: 16px;
         margin-top: 45px;
+    }
+
+    // ==========================================
+    // Мобильная адаптация (согласно макету)
+    // ==========================================
+    @media (max-width: 992px) {
+        &__cards {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+    }
+
+    @media (max-width: 768px) {
+        padding: 40px 20px;
+
+        &__header {
+            flex-direction: column;
+            gap: 12px;
+
+            // Стили под заголовок и подзаголовок на моб.
+            h2,
+            .title {
+                font-size: 24px;
+                line-height: 1.25;
+            }
+
+            p,
+            .aside {
+                font-size: 13.5px;
+                line-height: 1.5;
+                color: rgba(#0A1C30, 0.75);
+                margin: 0;
+            }
+        }
+
+        &__cards {
+            grid-template-columns: 1fr; // В одну колонку
+            gap: 16px;
+            margin-top: 24px;
+        }
+
+        // Поддержка стилей карточки внутри этой секции
+        .card {
+            border-radius: 20px;
+            padding: 24px 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+            border: 1px solid #f0f2f5;
+
+            &__icon-box {
+                width: 44px;
+                height: 44px;
+                border-radius: 50%;
+                background-color: #164273;
+                color: #ffffff;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 20px;
+            }
+
+            &__title {
+                font-size: 18px;
+                font-weight: 600;
+                line-height: 1.3;
+                color: #0A1C30;
+                margin-bottom: 8px;
+            }
+
+            &__text {
+                font-size: 12.5px;
+                line-height: 1.5;
+                color: #556980;
+            }
+        }
+
+        
+ 
+        
     }
 }

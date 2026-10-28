@@ -13,19 +13,64 @@
     &__element--growatt {
         width: 100%;
         text-align: center;
+        padding-bottom: 12px;
         color: rgba($primary-font-color, 0.5);
-        border-bottom: 1px solid rgba($primary-font-color, 0.5);
+        border-bottom: 1px solid rgba($primary-font-color, 0.25);
+        text-decoration: none;
+        transition: color 0.2s ease, border-color 0.2s ease;
+
+        &:hover {
+            color: $primary-font-color;
+        }
     }
 
     &__element--kstar.active {
         color: $primary-color;
         font-weight: 500;
         border-bottom: 2px solid $primary-color;
+        margin-bottom: -1px; // Выравнивание активной линии поверх общей
     }
 
     &__element--growatt.active {
         color: $growatt-primary-color;
         font-weight: 500;
         border-bottom: 2px solid $growatt-primary-color;
+        margin-bottom: -1px;
+    }
+
+    // ==========================================
+    // Мобильная адаптация (согласно макету)
+    // ==========================================
+    @media (max-width: 768px) {
+        padding: 16px 20px 8px;
+
+        &__nav {
+            font-size: 16px; // Уменьшаем размер табов под телефон
+        }
+
+        &__element--kstar,
+        &__element--growatt {
+            padding-bottom: 8px;
+            font-size: 16px;
+        }
+
+        &__element--kstar.active,
+        &__element--growatt.active {
+            font-weight: 600;
+        }
+    }
+
+    @media (max-width: 380px) {
+        padding: 12px 14px 6px;
+
+        &__nav {
+            font-size: 15px;
+        }
+
+        &__element--kstar,
+        &__element--growatt {
+            padding-bottom: 6px;
+            font-size: 14.5px;
+        }
     }
 }

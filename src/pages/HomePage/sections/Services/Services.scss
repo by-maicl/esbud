@@ -7,6 +7,14 @@
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 24px;
+        align-items: start;
+    }
+
+    &__link {
+        display: block;
+        text-decoration: none;
+        color: inherit;
+        height: 100%;
     }
 
     &__option {
@@ -14,22 +22,22 @@
         flex-direction: column;
         justify-content: space-between;
         width: 100%;
-        height: 100%;
         min-height: 500px;
         background-size: cover;
         background-position: top;
         border-radius: 30px;
         padding: 25px;
+        box-sizing: border-box;
 
         &--solar {
             background-image:
-                linear-gradient(transparent 50%, rgba(#0A1C30, 80%)),
+                linear-gradient(transparent 50%, rgba(#0A1C30, 0.8)),
                 url('../../../../assets/home-img/services/solar-panel.png');
         }
 
         &--house {
             background-image:
-                linear-gradient(transparent 50%, rgba(#0A1C30, 80%)),
+                linear-gradient(transparent 50%, rgba(#0A1C30, 0.8)),
                 url('../../../../assets/home-img/services/house.png');
         }
     }
@@ -39,8 +47,9 @@
         border-radius: 30px;
         font-size: 22px;
         font-weight: 600;
-        padding: 7px;
-        background-color: rgba($color: #D6DADE, $alpha: 0.5);
+        padding: 7px 16px;
+        background-color: rgba(#D6DADE, 0.5);
+        backdrop-filter: blur(4px);
         display: flex;
         align-items: center;
         gap: 10px;
@@ -48,32 +57,149 @@
         span {
             width: 15px;
             height: 15px;
-            border-radius: 100px;
+            border-radius: 50%;
             background-color: $primary-color;
         }
     }
 
     &__option-info {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 16px;
         color: $secondary-font-color;
+    }
+
+    &__option-text {
+        flex: 1;
 
         h4 {
             font-size: 26px;
             font-weight: 500;
-            grid-column: 1;
+            line-height: 1.2;
         }
 
         p {
             margin-top: 12px;
             font-size: 15px;
+            line-height: 1.45;
             color: rgba($secondary-font-color, 0.75);
-            grid-column: 1;
         }
     }
 
     &__option-btn {
-        justify-self: end;
-        align-self: end;
+        flex-shrink: 0;
+    }
+
+    // ==========================================
+    // Мобильная адаптация (согласно макету)
+    // ==========================================
+    @media (max-width: 768px) {
+        padding: 40px 20px;
+
+        &__grid {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        &__subtitle {
+            margin-top: 14px;
+            font-size: 24px;
+            line-height: 1.25;
+
+            br {
+                display: none; // На узких экранах текст переносится естественным образом
+            }
+        }
+
+        &__aside {
+            margin-top: 4px;
+            margin-bottom: 8px;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        &__card-reveal {
+            width: 100%;
+        }
+
+        &__option {
+            min-height: 380px;
+            padding: 20px;
+            border-radius: 20px;
+
+            &--solar {
+                background-position: center;
+                background-image:
+                    linear-gradient(to top, rgba(#0A1C30, 0.92) 0%, rgba(#0A1C30, 0.5) 45%, transparent 75%),
+                    url('../../../../assets/home-img/services/solar-panel.png');
+            }
+
+            &--house {
+                background-position: center;
+                background-image:
+                    linear-gradient(to top, rgba(#0A1C30, 0.92) 0%, rgba(#0A1C30, 0.5) 45%, transparent 75%),
+                    url('../../../../assets/home-img/services/house.png');
+            }
+        }
+
+        &__option-title {
+            font-size: 14px;
+            font-weight: 500;
+            padding: 6px 14px;
+            gap: 8px;
+            border-radius: 20px;
+
+            span {
+                width: 10px;
+                height: 10px;
+            }
+        }
+
+        &__option-info {
+            gap: 12px;
+        }
+
+        &__option-text {
+            h4 {
+                font-size: 20px;
+                line-height: 1.25;
+            }
+
+            p {
+                margin-top: 8px;
+                font-size: 12px;
+                line-height: 1.45;
+                color: rgba($secondary-font-color, 0.85);
+            }
+        }
+
+        &__option-btn {
+            width: 44px;
+            height: 44px;
+        }
+    }
+
+    @media (max-width: 400px) {
+        &__option {
+            min-height: 340px;
+            padding: 16px;
+        }
+
+        &__option-text {
+            h4 {
+                font-size: 18px;
+            }
+
+            p {
+                font-size: 11px;
+            }
+        }
+
+        &__option-btn {
+            width: 38px;
+            height: 38px;
+        }
     }
 }

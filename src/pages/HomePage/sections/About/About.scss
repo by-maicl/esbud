@@ -59,4 +59,60 @@
             color: $subtitle-color;
         }
     }
+
+    // ==========================================
+    // Адаптив под мобильную версию (макет)
+    // ==========================================
+    @media (max-width: 768px) {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        padding: 40px 20px;
+
+        &__company-name {
+            display: none; // Скрываем "ТОВ «Енергосоларбуд»" согласно макету
+        }
+
+        &__img {
+            height: 230px; // Компактная высота для мобильных экранов
+            margin-top: 24px;
+            gap: 10px;
+
+            img {
+                object-position: center;
+            }
+
+            img:first-child {
+                flex: 1.15;
+                border-radius: 16px; // Симметричные скругления как на фото
+            }
+
+            img:last-child {
+                flex: 0.85;
+                border-radius: 16px;
+            }
+        }
+
+        &__info-text {
+            margin-top: 0; // Убираем десктопный отступ 115px
+
+            h4 {
+                font-size: 24px;
+                line-height: 1.25;
+                margin-bottom: 16px;
+            }
+
+            p {
+                font-size: 14px;
+                line-height: 1.55;
+                margin-top: 14px;
+            }
+        }
+    }
+
+    @media (max-width: 480px) {
+        &__img {
+            height: 190px;
+        }
+    }
 }

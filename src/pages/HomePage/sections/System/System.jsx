@@ -36,39 +36,56 @@ function System() {
     return (
         <section className='system'>
             <SectionTitle>Розроблено для реальних систем</SectionTitle>
-            <div className="system__wrapp">
-                <img
-                    key={`image-${activeIndex}`}
-                    className={slideClass}
-                    src={activeSystem.image}
-                    alt={activeSystem.alt}
-                />
 
-                <div
-                    key={`info-${activeIndex}`}
-                    className={`system__info ${slideClass}`}
-                >
-                    <SectionSubtitle className="system__subtitle">
-                        {activeSystem.title}
-                    </SectionSubtitle>
+            {/* Десктопная версия: слайдер со стрелками */}
+            <div className="system__desktop-slider">
+                <div className="system__wrapp">
+                    <img
+                        key={`image-${activeIndex}`}
+                        className={slideClass}
+                        src={activeSystem.image}
+                        alt={activeSystem.alt}
+                    />
 
-                    <p>{activeSystem.text}</p>
+                    <div
+                        key={`info-${activeIndex}`}
+                        className={`system__info ${slideClass}`}
+                    >
+                        <SectionSubtitle className="system__subtitle">
+                            {activeSystem.title}
+                        </SectionSubtitle>
 
-                    <div className="system__buttons">
-                        <ArrowButton
-                            className="system__buttons--left"
-                            disabled={activeIndex === 0}
-                            onClick={showPrevious}
-                        />
+                        <p>{activeSystem.text}</p>
 
-                        <ArrowButton
-                            disabled={
-                                activeIndex === systems.length - 1
-                            }
-                            onClick={showNext}
-                        />
+                        <div className="system__buttons">
+                            <ArrowButton
+                                className="system__buttons--left"
+                                disabled={activeIndex === 0}
+                                onClick={showPrevious}
+                            />
+
+                            <ArrowButton
+                                disabled={activeIndex === systems.length - 1}
+                                onClick={showNext}
+                            />
+                        </div>
                     </div>
                 </div>
+            </div>
+
+            {/* Мобильная версия: вертикальный список всех систем по макету */}
+            <div className="system__mobile-list">
+                {systems.map((item, idx) => (
+                    <article key={idx} className="system__mobile-item">
+                        <div className="system__mobile-img-wrapper">
+                            <img src={item.image} alt={item.alt || item.title} />
+                        </div>
+                        <div className="system__mobile-content">
+                            <h3>{item.title}</h3>
+                            <p>{item.text}</p>
+                        </div>
+                    </article>
+                ))}
             </div>
         </section>
     );

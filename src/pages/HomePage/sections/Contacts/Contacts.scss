@@ -4,8 +4,9 @@
     background-color: $secondary-background-color;
     padding: 65px 8%;
     display: grid;
-    gap: 20px;
+    gap: 30px;
     grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: start;
 
     p {
         color: $subtitle-color;
@@ -15,28 +16,37 @@
     }
 
     &__info {
-        width: 70%;
+        width: 85%;
         margin: 0 auto;
 
         ul {
             list-style: none;
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 16px;
+            padding: 0;
+            margin: 0;
 
             li {
                 display: flex;
-                gap: 10px;
+                gap: 12px;
                 align-items: center;
                 color: $subtitle-color;
+                font-size: 15px;
                 font-weight: 500;
+                line-height: 1.4;
+
+                // Если адрес длинный, текст не ломает верстку
+                span:last-child {
+                    flex: 1;
+                }
             }
         }
     }
 
     &__btn {
         width: 100%;
-        padding: 10px 20px;
+        padding: 12px 20px;
         margin-top: 30px;
     }
 
@@ -44,6 +54,59 @@
         border-radius: 30px;
         border: none;
         width: 100%;
+        min-height: 280px;
         height: 100%;
+    }
+
+    // ==========================================
+    // Адаптив под мобильную версию (макет)
+    // ==========================================
+    @media (max-width: 992px) {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        padding: 40px 20px;
+
+        p {
+            font-size: 13.5px;
+            line-height: 1.55;
+            margin-top: 14px;
+        }
+
+        &__info {
+            width: 100%;
+            margin: 0;
+
+            ul {
+                gap: 14px;
+
+                li {
+                    font-size: 13.5px;
+                    gap: 12px;
+                }
+            }
+        }
+
+        &__btn {
+            margin-top: 24px;
+            height: 48px;
+            font-size: 15px;
+        }
+
+        &__map {
+            height: 280px;
+            border-radius: 20px;
+        }
+    }
+
+    @media (max-width: 380px) {
+        padding: 30px 16px;
+
+        &__info ul li {
+            font-size: 12.5px;
+        }
+
+        &__map {
+            height: 240px;
+        }
     }
 }

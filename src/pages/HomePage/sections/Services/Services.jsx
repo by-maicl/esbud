@@ -12,33 +12,51 @@ function Services() {
     return (
         <section className='services' id='services'>
             <SectionTitle>Наші послуги</SectionTitle>
+            
             <div className='services__grid'>
-                <SectionSubtitle>Створюємо простір, <br /> підсилюємо його енергією.</SectionSubtitle>
-                <SectionAside>Кожен напрям може бути окремим проєктом або частиною комплексного рішення.</SectionAside>
+                <SectionSubtitle className='services__subtitle'>
+                    Створюємо простір, <br /> підсилюємо його енергією.
+                </SectionSubtitle>
+                
+                <SectionAside className='services__aside'>
+                    Кожен напрям може бути окремим проєктом або частиною комплексного рішення.
+                </SectionAside>
 
-                <Reveal>
-                    <NavLink to="/kstar">
+                <Reveal className='services__card-reveal'>
+                    <NavLink to="/kstar" className='services__link'>
                         <div className="services__option services__option--solar">
-                            <p className='services__option-title'><span></span>Енергетика</p>
+                            <p className='services__option-title'>
+                                <span></span>Енергетика
+                            </p>
                             <div className='services__option-info'>
-                                <h4>Сонячні панелі</h4>
-                                <p>Мережеві, гібридні та автономні конфігурації для дому й бізнесу,
-                                    з можливістю накопичення та моніторингу.</p>
-                                <ArrowButton className='services__option-btn'></ArrowButton>
+                                <div className='services__option-text'>
+                                    <h4>Сонячні панелі</h4>
+                                    <p>
+                                        Мережеві, гібридні та автономні конфігурації для дому й бізнесу,
+                                        з можливістю накопичення та моніторингу.
+                                    </p>
+                                </div>
+                                <ArrowButton className='services__option-btn' />
                             </div>
                         </div>
                     </NavLink>
                 </Reveal>
 
-                <Reveal delay={300}>
-                    <NavLink to="/modular-houses">
+                <Reveal delay={300} className='services__card-reveal'>
+                    <NavLink to="/modular-houses" className='services__link'>
                         <div className="services__option services__option--house">
-                            <p className='services__option-title'><span></span>Будівництво</p>
+                            <p className='services__option-title'>
+                                <span></span>Будівництво
+                            </p>
                             <div className='services__option-info'>
-                                <h4>Модульні будинки</h4>
-                                <p>Житлові, гостьові та комерційні формати з
-                                    продуманим плануванням, інженерією й можливістю масштабування.</p>
-                                <ArrowButton className='services__option-btn'></ArrowButton>
+                                <div className='services__option-text'>
+                                    <h4>Модульні будинки</h4>
+                                    <p>
+                                        Житлові, гостьові та комерційні формати з
+                                        продуманим плануванням, інженерією й можливістю масштабування.
+                                    </p>
+                                </div>
+                                <ArrowButton className='services__option-btn' />
                             </div>
                         </div>
                     </NavLink>

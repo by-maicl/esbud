@@ -1,7 +1,7 @@
 @use '../../styles/variables' as *;
 
 .footer {
-    background-color: $primary-color;
+    background-color: #144375; // или $primary-color
     padding: 70px 64px 25px 64px;
     color: $secondary-font-color;
 
@@ -9,6 +9,12 @@
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         position: relative;
+        gap: 30px;
+    }
+
+    &__company {
+        display: flex;
+        flex-direction: column;
     }
 
     &__company-grid {
@@ -31,37 +37,50 @@
     }
 
     &__logo {
-        background-color: $footer-primary;
-        border-radius: 100px;
+        background-color: #1a2a40;
+        border-radius: 50%;
         width: 50px;
         height: 50px;
         display: flex;
         justify-content: center;
         align-items: center;
+        flex-shrink: 0;
 
         img {
-            width: 30px;
-            height: 35px;
+            width: 28px;
+            height: 28px;
+            object-fit: contain;
         }
     }
 
     &__social {
         display: flex;
-        gap: 10px;
+        gap: 12px;
         position: absolute;
         bottom: 0;
 
         img {
             width: 17px;
             height: 17px;
+            object-fit: contain;
         }
     }
 
     &__social-icon {
-        padding: 15px;
-        border-radius: 100px;
-        background-color: rgba($background-color, 0.07);
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.1);
         display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #ffffff;
+        text-decoration: none;
+        transition: background-color 0.2s ease;
+
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
     }
 
     &__element {
@@ -74,20 +93,27 @@
             width: fit-content;
             color: rgba($secondary-font-color, 0.7);
             font-size: 14px;
-            cursor: pointer;
+            text-decoration: none;
+            line-height: 1.4;
 
             &:hover {
                 text-decoration: underline;
+                color: #ffffff;
             }
         }
     }
 
     &__title {
-        color: $footer-primary;
-        font-size: 14px;
-        font-weight: 500;
+        color: rgba($secondary-font-color, 0.5);
+        font-size: 13px;
+        font-weight: 600;
         text-transform: uppercase;
-        letter-spacing: 8%;
+        letter-spacing: 0.08em;
+        margin-bottom: 4px;
+    }
+
+    &__br-mobile {
+        display: none;
     }
 
     &__company-name {
@@ -95,10 +121,12 @@
         font-weight: 400;
         color: rgba($secondary-font-color, 0.07);
         margin-top: 45px;
+        user-select: none;
+        line-height: 1.1;
     }
 
     &__subtext {
-        border-top: 2px solid rgba($background-color, 0.15);
+        border-top: 1px solid rgba(255, 255, 255, 0.15);
         margin-top: 45px;
         display: flex;
         justify-content: space-between;
@@ -107,6 +135,82 @@
         p {
             color: rgba($secondary-font-color, 0.5);
             font-size: 12px;
+        }
+    }
+
+    // ==========================================
+    // Мобильная адаптация (согласно макету)
+    // ==========================================
+    @media (max-width: 992px) {
+        padding: 44px 20px 24px;
+
+        &__grid {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        &__company {
+            gap: 20px;
+        }
+
+        // Соцсети встают в обычный поток сразу под лого
+        &__social {
+            position: static;
+        }
+
+        &__element {
+            gap: 12px;
+
+            a {
+                font-size: 13.5px;
+                color: rgba($secondary-font-color, 0.75);
+            }
+        }
+
+        &__title {
+            font-size: 12.5px;
+        }
+
+        &__br-mobile {
+            display: block; // Переносим "ТОВ" и "«Енергосоларбуд»" на две строки
+        }
+
+        &__company-name {
+            font-size: 34px;
+            font-weight: 600;
+            margin-top: 36px;
+            margin-bottom: 24px;
+            color: rgba(255, 255, 255, 0.08);
+            line-height: 1.15;
+        }
+
+        &__subtext {
+            border-top: 1px solid rgba(255, 255, 255, 0.12);
+            margin-top: 0;
+            padding-top: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+
+            p:last-child {
+                border-top: 1px solid rgba(255, 255, 255, 0.12);
+                padding-top: 16px;
+            }
+
+            p {
+                font-size: 11px;
+                line-height: 1.4;
+                color: rgba($secondary-font-color, 0.45);
+            }
+        }
+    }
+
+    @media (max-width: 380px) {
+        padding: 36px 16px 20px;
+
+        &__company-name {
+            font-size: 28px;
         }
     }
 }
