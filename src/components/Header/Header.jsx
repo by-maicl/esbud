@@ -158,17 +158,14 @@ function Header() {
                         Модульні будинки
                     </NavLink>
 
-                    <NavLink to="/about" className="header__mobile-item">
-                        Про нас
-                    </NavLink>
-
-                    <NavLink to="/services" className="header__mobile-item">
-                        Послуги
-                    </NavLink>
-
-                    <NavLink to="/projects" className="header__mobile-item">
-                        Проєкти
-                    </NavLink>
+                    <Link
+                        onClick={() => setIsMenuOpen(false)}
+                        to="/#aboutUs"
+                        className="header__mobile-item">Про нас</Link>
+                    <Link
+                        onClick={() => setIsMenuOpen(false)}
+                        to="/#services"
+                        className="header__mobile-item">Послуги</Link>
                 </div>
 
                 {/* Переключатель языков */}
