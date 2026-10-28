@@ -74,6 +74,13 @@
             margin: 0;
         }
 
+        &--secondary {
+            p,
+            .aside {
+                color: $secondary-font-color;
+            }
+        }
+
         // Кнопка со стрелкой на всю ширину
         &__btn {
             width: 100%;
@@ -82,7 +89,6 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            background-color: #194677;
             color: #ffffff;
             border: none;
             border-radius: 50px;
@@ -102,6 +108,12 @@
                 align-items: center;
                 justify-content: center;
                 flex-shrink: 0;
+            }
+        }
+
+        &--secondary {
+            .contactSection__btn {
+                color: $primary-color;
             }
         }
     }

@@ -1,5 +1,7 @@
 import './ContactSection.scss';
 
+import { Link } from 'react-router';
+
 import SectionTitle from '../SectionTitle/SectionTitle';
 import SectionAside from '../SectionAside/SectionAside';
 import Button from '../Button/Button';
@@ -21,11 +23,13 @@ function ContactSection({
             <div className='contactSection__wrapp'>
                 <SectionTitle className='contactSection__title' variant='medium'>Сконфігуруймо рішення під вашу задачу</SectionTitle>
                 <SectionAside>
-                    Залиште короткий запит — команда ТОВ «Енергосоларбуд» допоможе обрати категорію, 
+                    Залиште короткий запит — команда ТОВ «Енергосоларбуд» допоможе обрати категорію,
                     сформувати вихідні дані та спланувати наступний етап.
                 </SectionAside>
             </div>
-            <Button variant={variant} className='contactSection__btn'>Зв'язатися</Button>
+            <Link to="/#contacts">
+                <Button variant={variant} className='contactSection__btn'>Зв'язатися</Button>
+            </Link>
         </section>
     );
 }

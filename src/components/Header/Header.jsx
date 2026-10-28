@@ -93,13 +93,14 @@ function Header() {
                 </div>
 
                 <NavLink to="/modular-houses">Модульні будинки</NavLink>
-                <NavLink to="/about">Про нас</NavLink>
-                <NavLink to="/services">Послуги</NavLink>
-                <NavLink to="/projects">Проєкти</NavLink>
+                <Link to="/#aboutUs">Про нас</Link>
+                <Link to="/#services">Послуги</Link>
             </nav>
 
             <div className="header__desktop-btn">
-                <Button style={{ padding: '6px 12px 6px 20px' }}>Зв'язатися</Button>
+                <Link to="/#contacts">
+                    <Button style={{ padding: '6px 12px 6px 20px' }}>Зв'язатися</Button>
+                </Link>
             </div>
 
             {/* Кнопка открытия мобильного меню */}

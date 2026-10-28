@@ -8,7 +8,7 @@ import { Phone, Mail, MapPin } from 'lucide-react';
 
 function Contacts() {
     return (
-        <section className='contacts'>
+        <section className='contacts' id='contacts'>
             <div>
                 <SectionTitle size={50} variant='medium'>Почнімо з вашого сценарію</SectionTitle>
                 <p>Розкажіть, який простір або енергетичне рішення вам потрібне. Команда ТОВ «Енергосоларбуд»
