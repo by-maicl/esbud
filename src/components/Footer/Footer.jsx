@@ -8,6 +8,13 @@ import instagramIcon from '../../assets/social/instagram.png';
 import facebookIcon from '../../assets/social/facebook.png';
 
 function Footer() {
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth',
+        });
+    };
+
     return (
         <footer className='footer'>
             <div className='footer__grid'>
@@ -35,17 +42,17 @@ function Footer() {
 
                 <div className='footer__element'>
                     <h3 className='footer__title'>Навігація</h3>
-                    <NavLink to="/" end>Головна</NavLink>
-                    <NavLink to="/kstar">Партнери</NavLink>
-                    <NavLink to="/modular-houses">Модульні будинки</NavLink>
-                    <NavLink to="/abc" end>Про нас</NavLink>
-                    <NavLink to="/abc" end>Послуги</NavLink>
+                    <NavLink to="/" end onClick={scrollToTop}>Головна</NavLink>
+                    <NavLink to="/kstar" onClick={scrollToTop}>Партнери</NavLink>
+                    <NavLink to="/modular-houses" onClick={scrollToTop}>Модульні будинки</NavLink>
+                    <Link to="/#aboutUs">Про нас</Link>
+                    <Link to="/#services">Послуги</Link>
                 </div>
 
                 <div className='footer__element'>
                     <h3 className='footer__title'>Напрями</h3>
-                    <NavLink to="/modular-houses" end>Модульні будинки</NavLink>
-                    <NavLink to="/kstar" end>Сонячні системи</NavLink>
+                    <NavLink to="/modular-houses" onClick={scrollToTop}>Модульні будинки</NavLink>
+                    <NavLink to="/kstar" onClick={scrollToTop}>Сонячні системи</NavLink>
                 </div>
 
                 <div className='footer__element'>

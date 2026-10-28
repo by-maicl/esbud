@@ -11,7 +11,7 @@ function DirectionsGrowatt() {
     return (
         <section className='directionsGrowatt'>
             <div className='directionsGrowatt__header'>
-                <SectionTitle className='growattTitle' variant='medium'>Основні напрямки Growatt</SectionTitle>
+                <SectionTitle className='growattText' variant='medium'>Основні напрямки Growatt</SectionTitle>
                 <SectionAside className='directionsGrowatt__header-subtitle'>До портфеля компанії входять сонячні інвертори, системи
                     накопичення енергії, зарядні пристрої для електромобілів та рішення
                     для інтелектуального керування енергією. </SectionAside>

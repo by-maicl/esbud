@@ -20,4 +20,12 @@
     &--primary {
         background-color: $secondary-background-color;
     }
+
+    &--growatt {
+        background-color: $background-color;
+    }
+
+    &--growatt:hover {
+        background-color: $growatt-primary-color;
+    }
 }

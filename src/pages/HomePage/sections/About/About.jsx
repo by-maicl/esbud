@@ -10,7 +10,7 @@ import Reveal from '../../../../components/Reveal/Reveal';
 
 function About() {
     return (
-        <section className='about'>
+        <section className='about' id='aboutUs'>
             <Reveal>
                 <div className="about__left">
                     <SectionTitle>Про нас</SectionTitle>

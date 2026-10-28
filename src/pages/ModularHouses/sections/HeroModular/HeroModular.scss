@@ -1,0 +1,69 @@
+@use '../../../../styles/variables' as *;
+
+.heroModular {
+    background-color: $primary-color;
+    margin: 15px;
+    padding: 42px 8%;
+    border-radius: 30px;
+
+    &__path {
+        color: $hero-subtitle;
+        font-size: 12px;
+    }
+
+    &__wrapp {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        align-items: center;
+        margin: 80px 0 90px 0;
+    }
+
+    &__title {
+        color: $secondary-font-color;
+        font-size: 52px;
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        gap: 45px;
+
+        p {
+            margin-top: -20px;
+            color: $hero-subtitle;
+        }
+    }
+
+    &__btn {
+        width: 50%;
+    }
+
+    &__using {
+        display: flex;
+        gap: 12px;
+    }
+
+    &__img {
+        position: relative;
+        border-radius: 24px;
+        width: 90%;
+        justify-self: end;
+
+        img {
+            width: 100%;
+            object-fit: cover;
+            border-radius: 24px;
+        }
+
+        p {
+            position: absolute;
+            padding: 10px 16px;
+            border-radius: 100px;
+            background-color: $background-color;
+            bottom: 20px;
+            left: 20px;
+            font-size: 14px;
+            color: $primary-color;
+        }
+    }
+}

@@ -4,8 +4,7 @@ import MainLayout from './layouts/MainLayout/MainLayout.jsx';
 import HomePage from './pages/HomePage/HomePage.jsx';
 import PartnerKstar from './pages/PartnerKstar/PartnerKstar.jsx';
 import PartnerGrowatt from './pages/PartnerGrowatt/PartnerGrowatt.jsx';
-// import ModularHouses from './pages/ModularHouses/ModularHouses.jsx';
-// import NotFoundPage from './pages/NotFoundPage/NotFoundPage.jsx';
+import ModularHouses from './pages/ModularHouses/ModularHouses.jsx';
 
 function App() {
   return (
@@ -14,8 +13,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/kstar" element={<PartnerKstar />} />
         <Route path="/growatt" element={<PartnerGrowatt />} />
-        {/* <Route path="/modular-houses" element={<ModularHouses />} />
-        <Route path="*" element={<NotFoundPage />} /> */}
+        <Route path="/modular-houses" element={<ModularHouses />} />
       </Route>
     </Routes>
   );

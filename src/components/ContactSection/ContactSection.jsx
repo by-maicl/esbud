@@ -5,7 +5,7 @@ import SectionAside from '../SectionAside/SectionAside';
 import Button from '../Button/Button';
 
 function ContactSection({
-    variant = 'kstar',
+    variant = 'primary',
     className,
 }) {
     const contactSectionClasses = [
@@ -25,7 +25,7 @@ function ContactSection({
                     сформувати вихідні дані та спланувати наступний етап.
                 </SectionAside>
             </div>
-            <Button className='contactSection__btn'>Зв'язатися</Button>
+            <Button variant={variant} className='contactSection__btn'>Зв'язатися</Button>
         </section>
     );
 }

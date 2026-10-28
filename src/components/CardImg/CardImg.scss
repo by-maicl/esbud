@@ -11,12 +11,14 @@
     padding: 25px;
     border-radius: 30px;
 
-    background:
-        linear-gradient(transparent 50%, rgba($secondary-color, 0.9)),
-        var(--card-image);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: left;
+    &--primary {
+        background:
+            linear-gradient(transparent 50%, rgba($secondary-color, 0.9)),
+            var(--card-image);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: left;
+    }
 
     &__name {
         padding: 5px;
@@ -38,8 +40,30 @@
 
         p {
             font-size: 12px;
-            color: rgba($secondary-font-color, $alpha: 0.65);
+            color: rgba($secondary-font-color, 0.65);
             margin-top: 8px;
+        }
+    }
+    
+    &--growatt {
+        background-image: var(--card-image);
+        background-color: $growatt-card-background;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+
+        .cardImg__name {
+            color: $growatt-primary-font-color;
+        }
+
+        .cardImg__info {
+            h2 {
+                color: $growatt-primary-font-color;
+            }
+
+            p {
+                color: rgba($growatt-primary-font-color, 0.65);
+            }
         }
     }
 }

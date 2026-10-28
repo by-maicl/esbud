@@ -15,6 +15,8 @@ function CardHorizontal({
 }) {
     const [isHovered, setIsHovered] = useState(false);
 
+    const isGrowatt = variant == 'growatt';
+
     const cardClasses = [
         'cardHorizontal',
         `cardHorizontal--${variant}`,
@@ -31,7 +33,10 @@ function CardHorizontal({
         >
             <IconBlock
                 icon={Icon}
-                variant={!isHovered ? 'primary' : 'secondary'}
+                variant={isGrowatt ?
+                    !isHovered ? 'growatt-primary' : 'growatt-secondary'
+                    :
+                    !isHovered ? 'primary' : 'secondary'}
             />
             <div>
                 <SectionTitle color={!isHovered ? '#000' : '#fff'} size={21}>{title}</SectionTitle>

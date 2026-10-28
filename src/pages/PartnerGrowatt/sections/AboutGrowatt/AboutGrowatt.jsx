@@ -39,7 +39,7 @@ function AboutGrowatt() {
             </div>
 
             <Reveal delay={300} className='aboutGrowatt__info'>
-                <SectionTitle className='growattTitle'>Про нас</SectionTitle>
+                <SectionTitle className='growattText'>Про нас</SectionTitle>
                 <SectionSubtitle className='aboutGrowatt__subtitle'>ТОВ «ЕНЕРГОСОЛАРБУД» є офіційним представником обладнання
                     GROWATT - глобального постачальника рішень у сфері розподіленої енергетики.</SectionSubtitle>
                 <p className='aboutGrowatt__description'>Компанія Growatt була заснована у 2011 році в Шеньчжені, Китай,

@@ -1,5 +1,5 @@
 import { Link, NavLink, useLocation } from 'react-router';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import './Header.scss';
 
@@ -10,6 +10,19 @@ import { ChevronDown } from 'lucide-react';
 
 function Header() {
     const location = useLocation();
+
+    useEffect(() => {
+        if (!location.hash) return;
+
+        const targetId = decodeURIComponent(location.hash.slice(1));
+
+        requestAnimationFrame(() => {
+            document.getElementById(targetId)?.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start',
+            });
+        });
+    }, [location.pathname, location.hash]);
 
     const isPartnerPage = ['/kstar', '/growatt'].some(
         (path) =>
@@ -65,13 +78,13 @@ function Header() {
                     Модульні будинки
                 </NavLink>
 
-                <NavLink to="/abc" end>
+                <Link to="/#aboutUs">
                     Про нас
-                </NavLink>
+                </Link>
 
-                <NavLink to="/abc" end>
+                <Link to="/#services">
                     Послуги
-                </NavLink>
+                </Link>
             </nav>
 
             <Button style={{ padding: '0 12px 0 20px' }}>Зв'язатися</Button>

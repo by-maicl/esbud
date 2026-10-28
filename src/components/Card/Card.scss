@@ -15,6 +15,7 @@
     box-shadow: 0 15px 40px rgba(#000, $alpha: 0.1);
     transition: all 0.3s ease;
 
+    &--active,
     &:hover {
         background-color: $primary-color;
         outline: 1px solid $secondary-color;

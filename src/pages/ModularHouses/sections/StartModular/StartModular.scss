@@ -1,0 +1,23 @@
+@use '../../../../styles/variables' as *;
+
+.startModular {
+    padding: 80px 8%;
+
+    &__header {
+        display: grid;
+        grid-template-columns: 60% 40%;
+    }
+
+    &__cards {
+        margin-top: 45px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        width: 100%;
+    }
+
+    &__card {
+        padding: 30px;
+        width: 100%;
+    }
+}

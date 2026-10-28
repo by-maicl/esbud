@@ -1,0 +1,24 @@
+@use '../../../../styles/variables' as *;
+
+.rewardGrowatt {
+    padding: 80px 8%;
+    background-color: $growatt-section-background;
+
+    &__wrapp {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 65px;
+        margin-top: 45px;
+
+        img {
+            width: 100%;
+            border-radius: 30px;
+        }
+    }
+
+    &__cards {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+}

@@ -8,7 +8,7 @@ import growattExample from '../../../../assets/growatt/inverter.png'
 
 function Hero() {
     const scrollToProjects = () => {
-        document.getElementById('projects')?.scrollIntoView({
+        document.getElementById('products')?.scrollIntoView({
             behavior: 'smooth',
             block: 'start',
         });

@@ -1,0 +1,84 @@
+@use '../../../../styles/variables' as *;
+
+.faqModular {
+    padding: 80px 8%;
+    display: grid;
+    grid-template-columns: 40% 60%;
+
+    &__header {
+        p {
+            margin-top: 25px;
+        }
+    }
+
+    &__question {
+        padding: 25px 0;
+        border-bottom: 1px solid $card-border;
+
+        &-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+
+            width: 100%;
+            padding: 0;
+
+            background: transparent;
+            border: none;
+            color: $secondary-color;
+            text-align: left;
+            cursor: pointer;
+            transition: all 0.3s ease;
+
+            h3 {
+                font-size: 18px;
+                font-weight: 600;
+                margin: 0;
+            }
+
+            svg {
+                flex-shrink: 0;
+                transition: transform 0.3s ease;
+            }
+
+            &:hover {
+                color: $primary-color;
+            }
+        }
+    }
+
+    &__answer-wrapper {
+        display: grid;
+        grid-template-rows: 0fr;
+        opacity: 0;
+
+        transition:
+            grid-template-rows 0.3s ease,
+            opacity 0.3s ease;
+
+        >p {
+            overflow: hidden;
+        }
+    }
+
+    &__question.active {
+        .faqModular__answer-wrapper {
+            grid-template-rows: 1fr;
+            opacity: 1;
+        }
+    }
+
+    &__question-answer {
+        min-height: 0;
+        font-size: 14px;
+        color: $subtitle-color;
+        line-height: 1.5;
+        margin: 0;
+        padding-top: 0;
+
+        .faqModular__question.active & {
+            padding-top: 10px;
+        }
+    }
+}

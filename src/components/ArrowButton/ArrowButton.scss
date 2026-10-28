@@ -29,4 +29,16 @@
             background-color: $secondary-background-color;
         }
     }
+
+    &--growatt {
+        background-color: $growatt-primary-color;
+
+        &:hover:not(:disabled) {
+            background-color: $growatt-secondary-color;
+
+            div {
+                background-color: $secondary-background-color;
+            }
+        }
+    }
 }

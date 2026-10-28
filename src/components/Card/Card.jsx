@@ -16,10 +16,14 @@ function Card({
     const [isHovered, setIsHovered] = useState(false);
 
     const isGrowatt = variant == 'growatt';
+    const isModular = variant == 'secondary';
+
+    const isActive = isHovered || isModular;
 
     const cardClasses = [
         'card',
         `card--${variant}`,
+        isActive ? 'card--active' : '',
         className,
     ]
         .filter(Boolean)
@@ -33,14 +37,19 @@ function Card({
         >
             <IconBlock
                 icon={Icon}
-                variant={isGrowatt ? 
-                    !isHovered ? 'growatt-primary' : 'growatt-secondary'
-                    :
-                    !isHovered ? 'primary' : 'secondary'}
+                variant={
+                    isGrowatt
+                        ? isActive
+                            ? 'growatt-secondary'
+                            : 'growatt-primary'
+                        : isActive
+                            ? 'secondary'
+                            : 'primary'
+                }
             />
             <div>
-                <SectionTitle color={!isHovered ? '#000' : '#fff'} size={21}>{title}</SectionTitle>
-                <SectionAside varian={!isHovered ? '' : 'card'} size={14} className='card__text'>{children}</SectionAside>
+                <SectionTitle color={!isActive ? '#000' : '#fff'} size={21}>{title}</SectionTitle>
+                <SectionAside varian={!isActive ? '' : 'card'} size={14} className='card__text'>{children}</SectionAside>
             </div>
         </div>
     );

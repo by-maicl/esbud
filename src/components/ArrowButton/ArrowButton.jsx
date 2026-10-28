@@ -4,11 +4,13 @@ import { ArrowRight } from 'lucide-react';
 
 function ArrowButton({
     onClick,
+    variant = 'primary',
     disabled = false,
     className = '',
 }) {
     const arrowButtonClasses = [
         'arrowButton',
+        `arrowButton--${variant}`,
         className,
     ]
         .filter(Boolean)

@@ -10,7 +10,7 @@ import ArrowButton from '../../../../components/ArrowButton/ArrowButton';
 
 function Services() {
     return (
-        <section className='services'>
+        <section className='services' id='services'>
             <SectionTitle>Наші послуги</SectionTitle>
             <div className='services__grid'>
                 <SectionSubtitle>Створюємо простір, <br /> підсилюємо його енергією.</SectionSubtitle>

@@ -20,7 +20,9 @@ function CardImg({
     return (
         <div
             className={cardClasses}
-            style={variant == 'primary' ? {'--card-image' : `url(${img})`} : undefined}
+            style={{
+                '--card-image': `url("${img}")`,
+            }}
         >
             <div className='cardImg__name'>{name}</div>
             <div className='cardImg__info'>

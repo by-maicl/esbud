@@ -1,0 +1,62 @@
+@use '../../../../styles/variables' as *;
+
+.stagesModular {
+    padding: 80px 8%;
+    background-color: $secondary-color;
+
+    &__header {
+        display: grid;
+        grid-template-columns: 70% 30%;
+    }
+
+    &__title {
+        color: $secondary-font-color;
+    }
+
+    &__aside {
+        color: rgba($secondary-font-color, 0.7);
+        line-height: 1.5;
+    }
+
+    &__stages {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 20px;
+        margin-top: 45px;
+    }
+
+    &__stage {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 240px;
+        background-color: rgba($background-color, 0.05);
+        border-radius: 20px;
+        padding: 20px;
+
+        &-number {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 48px;
+            height: 48px;
+            border-radius: 30px;
+            background-color: $background-color;
+            color: $primary-color;
+            font-size: 21px;
+            font-weight: 500;
+        }
+
+        &-title {
+            color: $secondary-font-color;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        &-text {
+            font-size: 14px;
+            color: rgba($secondary-font-color, 0.65);
+            margin-top: 10px;
+        }
+    }
+}

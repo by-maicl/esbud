@@ -17,7 +17,7 @@
         width: 100%;
     }
 
-    &--kstar {
+    &--primary {
         background-color: $secondary-background-color;
     }
 
@@ -25,7 +25,15 @@
         background-color: transparent;
     }
 
-    &--modular-houses {
+    &--secondary {
         background-color: $secondary-color;
+
+        .contactSection__title {
+            color: $secondary-font-color;
+        }
+
+        p {
+            color: $secondary-font-color;
+        }
     }
 }
