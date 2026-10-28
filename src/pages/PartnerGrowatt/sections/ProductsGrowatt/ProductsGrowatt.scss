@@ -1,11 +1,20 @@
 @use '../../../../styles/variables' as *;
 
 .productsGrowatt {
-
     &__header {
         display: grid;
         grid-template-columns: 1fr 1fr;
         margin: 80px 8% 0 8%;
+        gap: 30px;
+
+        &-text {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    &__mobile-note {
+        display: none;
     }
 
     &__wrapp {
@@ -68,6 +77,143 @@
         >* {
             width: 100%;
             height: 100%;
+        }
+    }
+
+    // Мобільний блок приховано на десктопі
+    &__mobile {
+        display: none;
+    }
+
+    // ==========================================
+    // Мобільна адаптація (відповідно до макета)
+    // ==========================================
+    @media (max-width: 768px) {
+        padding: 40px 20px 48px;
+
+        &__header {
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+            gap: 14px;
+
+            h2,
+            .title {
+                font-size: 26px !important;
+                line-height: 1.25;
+                color: #0A1C30;
+                margin: 0;
+            }
+
+            &-text {
+                gap: 12px;
+
+                p,
+                .aside {
+                    font-size: 13px;
+                    line-height: 1.55;
+                    color: #52657A;
+                    margin: 0;
+                }
+            }
+        }
+
+        &__mobile-note {
+            display: block;
+            font-size: 13px;
+            line-height: 1.55;
+            color: #52657A;
+            margin: 0;
+        }
+
+        // Приховуємо десктопний грід
+        &__wrapp {
+            display: none;
+        }
+
+        // Відображаємо мобільний контейнер свайпу
+        &__mobile {
+            display: flex;
+            flex-direction: column;
+            margin-top: 24px;
+            width: 100%;
+        }
+
+        &__mobile-scroll {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+            width: 100%;
+            gap: 0;
+
+            scrollbar-width: none;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+        }
+
+        &__mobile-card {
+            flex: 0 0 100%;
+            width: 100%;
+            scroll-snap-align: start;
+            box-sizing: border-box;
+
+            // Картка всередині CardImg
+            .cardImg,
+            >div {
+                width: 100%;
+                min-height: 380px;
+                border-radius: 24px;
+                overflow: hidden;
+            }
+        }
+
+        // Точки внизу
+        &__dots {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 20px;
+        }
+
+        &__dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background-color: #cbd5e1;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+            transition: all 0.25s ease;
+
+            &.active {
+                background-color: #81ba4c; // Фірмовий колір Growatt для активної точки
+                width: 8px;
+                height: 8px;
+            }
+        }
+    }
+
+    @media (max-width: 380px) {
+        padding: 32px 14px 40px;
+
+        &__header h2,
+        &__header .title {
+            font-size: 23px !important;
+        }
+
+        &__header-text p,
+        &__mobile-note {
+            font-size: 12px;
+        }
+
+        &__mobile-card .cardImg,
+        &__mobile-card>div {
+            min-height: 340px;
         }
     }
 }

@@ -4,11 +4,26 @@
     padding: 80px 8%;
     display: grid;
     grid-template-columns: 40% 60%;
+    gap: 40px;
 
     &__header {
+        h2, .title {
+            font-size: 40px;
+            color: $secondary-color;
+            line-height: 1.2;
+        }
+
         p {
             margin-top: 25px;
+            font-size: 16px;
+            color: $subtitle-color;
+            line-height: 1.5;
         }
+    }
+
+    &__questions {
+        display: flex;
+        flex-direction: column;
     }
 
     &__question {
@@ -34,6 +49,7 @@
             h3 {
                 font-size: 18px;
                 font-weight: 600;
+                line-height: 1.35;
                 margin: 0;
             }
 
@@ -57,7 +73,7 @@
             grid-template-rows 0.3s ease,
             opacity 0.3s ease;
 
-        >p {
+        > p {
             overflow: hidden;
         }
     }
@@ -66,6 +82,10 @@
         .faqModular__answer-wrapper {
             grid-template-rows: 1fr;
             opacity: 1;
+        }
+
+        .faqModular__question-header svg {
+            transform: rotate(45deg); // Якщо іконка Plus трансформується у хрестик
         }
     }
 
@@ -78,7 +98,105 @@
         padding-top: 0;
 
         .faqModular__question.active & {
-            padding-top: 10px;
+            padding-top: 12px;
+            flex-shrink: 0;
+          
+            
+        }
+        
+    }
+
+    // ==========================================
+    // Мобільна адаптація (згідно з макетом)
+    // ==========================================
+    @media (max-width: 992px) {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        padding: 40px 20px 48px;
+
+        &__header {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+
+            h2, .title {
+                font-size: 26px !important;
+                line-height: 1.25;
+                color: #0A1C30;
+                margin: 0;
+            }
+
+            p {
+                margin-top: 0;
+                font-size: 13px;
+                line-height: 1.55;
+                color: #52657A;
+            }
+        }
+
+        &__questions {
+            margin-top: 8px;
+        }
+
+        &__question {
+            padding: 18px 0;
+            border-bottom: 1px solid rgba(10, 28, 48, 0.1);
+
+            &-header {
+                gap: 16px;
+                align-items: flex-start;
+
+                h3 {
+                    font-size: 16px;
+                    line-height: 1.35;
+                    font-weight: 600;
+                    color: #0A1C30;
+                }
+
+                svg {
+                    width: 20px;
+                    height: 20px;
+                    margin-top: 2px;
+                    color: #0A1C30;
+                }
+            }
+        }
+
+        &__question-answer {
+            font-size: 12px;
+            line-height: 1.55;
+            color: #52657A;
+
+            .faqModular__question.active & {
+                padding-top: 10px;
+            }
+        }
+    }
+
+    @media (max-width: 380px) {
+        padding: 32px 14px 40px;
+
+        &__header {
+            h2, .title {
+                font-size: 23px !important;
+            }
+
+            p {
+                font-size: 12px;
+            }
+        }
+
+        &__question {
+            padding: 15px 0;
+
+            &-header h3 {
+                font-size: 15px;
+            }
+        }
+
+        &__question-answer {
+            font-size: 11.5px;
         }
     }
 }

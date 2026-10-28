@@ -14,4 +14,17 @@
     &--bold {
         font-weight: 700;
     }
+
+    // ==========================================
+    // Мобільна адаптація для всіх секцій
+    // ==========================================
+    @media (max-width: 992px) {
+        font-size: 26px;
+        line-height: 1.25;
+        letter-spacing: -0.01em;
+    }
+
+    @media (max-width: 380px) {
+        font-size: 23px;
+    }
 }

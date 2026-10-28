@@ -7,9 +7,13 @@
     &__header {
         display: grid;
         grid-template-columns: 1fr 1fr;
+        gap: 30px;
+        align-items: start;
 
         &-subtitle {
             color: $growatt-text-color;
+            font-size: 16px;
+            line-height: 1.5;
         }
     }
 
@@ -18,5 +22,100 @@
         grid-template-columns: repeat(4, minmax(0, 1fr));
         gap: 16px;
         margin-top: 45px;
+    }
+
+    // ==========================================
+    // Мобильная адаптация
+    // ==========================================
+    @media (max-width: 992px) {
+        &__cards {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+    }
+
+    @media (max-width: 768px) {
+        padding: 40px 20px 48px;
+
+        &__header {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+
+            h2,
+            .title {
+                font-size: 26px !important;
+                line-height: 1.25;
+                color: #0A1C30;
+                margin: 0;
+            }
+
+            &-subtitle {
+                font-size: 13.5px;
+                line-height: 1.55;
+                margin: 0;
+            }
+        }
+
+        &__cards {
+            grid-template-columns: 1fr;
+            gap: 16px;
+            margin-top: 24px;
+        }
+
+        // Адаптация карточек внутри секции
+        .card {
+            height: 100%;
+            gap: 20px;
+            border-radius: 20px;
+            padding: 22px 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+            border: 1px solid #f0f2f5;
+
+            &__icon-box,
+            &__icon-wrap {
+                width: 44px;
+                height: 44px;
+                border-radius: 50%;
+                background-color: #81ba4c; // Фирменный цвет Growatt
+                color: #ffffff;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 16px;
+            }
+
+            &__title,
+            h3,
+            h4 {
+                font-size: 18px;
+                font-weight: 600;
+                line-height: 1.3;
+                color: #0A1C30;
+                margin-bottom: 8px;
+            }
+
+            &__text,
+            p {
+                font-size: 12.5px;
+                line-height: 1.5;
+                color: $growatt-text-color;
+            }
+        }
+    }
+
+    @media (max-width: 380px) {
+        padding: 32px 14px 40px;
+
+        &__header {
+
+            h2,
+            .title {
+                font-size: 23px !important;
+            }
+
+            &-subtitle {
+                font-size: 12.5px;
+            }
+        }
     }
 }

@@ -1,41 +1,64 @@
 @use '../../../../styles/variables' as *;
 
 .heroModular {
-    background-color: $primary-color;
+    background-color: #0b3768; // або $primary-color
     margin: 15px;
     padding: 42px 8%;
     border-radius: 30px;
+    box-sizing: border-box;
 
     &__path {
-        color: $hero-subtitle;
-        font-size: 12px;
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 13px;
     }
 
     &__wrapp {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
         align-items: center;
-        margin: 80px 0 90px 0;
+        gap: 40px;
+        margin: 60px 0 70px 0;
     }
 
-    &__title {
-        color: $secondary-font-color;
-        font-size: 52px;
+    &__title-br {
+        display: none;
     }
 
     &__info {
         display: flex;
         flex-direction: column;
-        gap: 45px;
+        gap: 36px;
+    }
 
-        p {
-            margin-top: -20px;
-            color: $hero-subtitle;
-        }
+    &__desc {
+        color: rgba(255, 255, 255, 0.75);
+        font-size: 16px;
+        line-height: 1.5;
+        margin: -10px 0 0;
     }
 
     &__btn {
-        width: 50%;
+        width: fit-content;
+        min-width: 260px;
+        height: 52px;
+        padding: 6px 24px;
+        background-color: #ffffff;
+        color: #0b3768;
+        border: none;
+        border-radius: 50px;
+        font-size: 15px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+        &:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        &--mobile {
+            display: none;
+        }
     }
 
     &__using {
@@ -43,27 +66,162 @@
         gap: 12px;
     }
 
+    &__using-mobile {
+        display: none;
+    }
+
     &__img {
         position: relative;
         border-radius: 24px;
         width: 90%;
         justify-self: end;
+        overflow: hidden;
 
         img {
             width: 100%;
+            height: 360px;
             object-fit: cover;
             border-radius: 24px;
+            display: block;
         }
 
-        p {
+        p,
+        &__badge {
             position: absolute;
-            padding: 10px 16px;
+            padding: 8px 18px;
             border-radius: 100px;
-            background-color: $background-color;
+            background-color: #ffffff;
             bottom: 20px;
             left: 20px;
-            font-size: 14px;
-            color: $primary-color;
+            font-size: 13px;
+            font-weight: 500;
+            color: #0b3768;
+            margin: 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+    }
+
+    // ==========================================
+    // Мобільна адаптація (відповідно до макета)
+    // ==========================================
+    @media (max-width: 992px) {
+        margin: 8px;
+        padding: 32px 18px 36px;
+        border-radius: 20px;
+
+        &__path {
+            font-size: 12px;
+        }
+
+        &__wrapp {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin: 24px 0 0;
+        }
+
+        &__title-br {
+            display: block;
+        }
+
+        &__info {
+            gap: 16px;
+            width: 100%;
+
+            h2,
+            .title {
+                font-size: 26px !important;
+                line-height: 1.25;
+                letter-spacing: -0.3px;
+                margin: 0;
+            }
+        }
+
+        &__desc {
+            font-size: 13.5px;
+            line-height: 1.5;
+            color: rgba(255, 255, 255, 0.75);
+            margin: 0;
+        }
+
+        // Приховуємо десктопну кнопку та кнопки категорій
+        &__btn--desktop,
+        &__using {
+            display: none;
+        }
+
+        &__img {
+            width: 100%;
+            border-radius: 20px;
+            margin-top: 4px;
+
+            img {
+                height: 250px;
+                border-radius: 20px;
+            }
+
+            p,
+            &__badge {
+                bottom: 14px;
+                left: 14px;
+                padding: 6px 14px;
+                font-size: 11.5px;
+            }
+        }
+
+        // Відображаємо кнопку під зображенням
+        &__btn--mobile {
+            display: inline-flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            height: 52px;
+            padding: 6px 8px 6px 20px;
+            border-radius: 40px;
+            font-size: 14.5px;
+            margin-top: 4px;
+
+            .heroModular__btn-icon {
+                width: 36px;
+                height: 36px;
+                border-radius: 50%;
+                background-color: #0b3768;
+                color: #ffffff;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-shrink: 0;
+            }
+        }
+
+        // Рядок категорій у самому низу
+        &__using-mobile {
+            display: block;
+            margin: 6px 0 0;
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.55);
+            line-height: 1.4;
+        }
+    }
+
+    @media (max-width: 380px) {
+        padding: 24px 14px 28px;
+
+        &__info h2,
+        &__info .title {
+            font-size: 23px !important;
+        }
+
+        &__desc {
+            font-size: 12.5px;
+        }
+
+        &__img img {
+            height: 210px;
+        }
+
+        &__btn--mobile {
+            font-size: 13.5px;
         }
     }
 }

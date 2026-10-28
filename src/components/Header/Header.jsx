@@ -1,9 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, NavLink, useLocation } from 'react-router';
 import { Menu, X, Plus, Minus, ArrowRight } from 'lucide-react';
-import { useEffect, useState } from 'react';
-
-import './Header.scss';
 
 import Button from '../../components/Button/Button.jsx';
 import logo from '../../assets/logo.png';
@@ -102,7 +99,7 @@ function Header() {
             </nav>
 
             <div className="header__desktop-btn">
-                <Button style={{ padding: '0 12px 0 20px' }}>Зв'язатися</Button>
+                <Button style={{ padding: '6px 12px 6px 20px' }}>Зв'язатися</Button>
             </div>
 
             {/* Кнопка открытия мобильного меню */}
@@ -163,9 +160,6 @@ function Header() {
                     <NavLink to="/about" className="header__mobile-item">
                         Про нас
                     </NavLink>
-                <Link to="/#aboutUs">
-                    Про нас
-                </Link>
 
                     <NavLink to="/services" className="header__mobile-item">
                         Послуги
@@ -202,12 +196,6 @@ function Header() {
                     </span>
                 </button>
             </div>
-                <Link to="/#services">
-                    Послуги
-                </Link>
-            </nav>
-
-            <Button style={{ padding: '0 12px 0 20px' }}>Зв'язатися</Button>
         </header>
     );
 }

@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router';
+import { NavLink,Link } from 'react-router';
 
 
 import './Footer.scss';
@@ -49,15 +49,7 @@ function Footer() {
                         >
                             <img src={facebookIcon} alt="Facebook" />
                         </a>
-                        <a 
-                            href='https://linkedin.com' 
-                            target='_blank' 
-                            rel="noreferrer" 
-                            className='footer__social-icon'
-                            aria-label="LinkedIn"
-                        >
-                        
-                        </a>
+                       
                     </div>
                 </div>
 
@@ -69,11 +61,7 @@ function Footer() {
                     <NavLink to="/modular-houses" onClick={scrollToTop}>Модульні будинки</NavLink>
                     <Link to="/#aboutUs">Про нас</Link>
                     <Link to="/#services">Послуги</Link>
-                    <NavLink to="/" end>Головна</NavLink>
-                    <NavLink to="/kstar">Партнери</NavLink>
-                    <NavLink to="/about">Про нас</NavLink>
-                    <NavLink to="/services">Послуги</NavLink>
-                    <NavLink to="/projects">Проєкти</NavLink>
+
                 </div>
 
                 {/* 3. Направления */}
@@ -81,8 +69,6 @@ function Footer() {
                     <h3 className='footer__title'>Напрями</h3>
                     <NavLink to="/modular-houses" onClick={scrollToTop}>Модульні будинки</NavLink>
                     <NavLink to="/kstar" onClick={scrollToTop}>Сонячні системи</NavLink>
-                    <NavLink to="/modular-houses">Модульні будинки</NavLink>
-                    <NavLink to="/kstar">Сонячні системи</NavLink>
                 </div>
 
                 {/* 4. Контакты */}

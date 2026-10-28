@@ -7,7 +7,7 @@ import SectionAside from '../../../../components/SectionAside/SectionAside';
 
 import modularFaq from '../../../../data/modularFaq';
 
-import { Plus, Minus } from 'lucide-react';
+import { Plus, X } from 'lucide-react'; // Заменили Minus на X
 
 function FaqModular() {
     const [activeQuestion, setActiveQuestion] = useState(null);
@@ -50,7 +50,8 @@ function FaqModular() {
                                     {question.question}
                                 </h3>
 
-                                {isOpen ? <Minus size={22} /> : <Plus size={22} />}
+                                {/* Теперь при открытии рендерится полноценный крестик X */}
+                                {isOpen ? <X size={22} /> : <Plus size={22} />} 
                             </button>
 
                             <div
