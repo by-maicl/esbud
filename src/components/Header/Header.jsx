@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, NavLink, useLocation } from 'react-router';
 import { Menu, X, Plus, Minus, ArrowRight } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 import Button from '../../components/Button/Button.jsx';
 import logo from '../../assets/logo.png';
@@ -10,14 +11,14 @@ function Header() {
     const location = useLocation();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isPartnersOpen, setIsPartnersOpen] = useState(false);
-    const [lang, setLang] = useState('UA');
 
-    // Закрываем меню при смене маршрута
+    const { t, i18n } = useTranslation();
+    const lang = i18n.resolvedLanguage?.startsWith('en') ? 'EN' : 'UA';
+
     useEffect(() => {
         setIsMenuOpen(false);
     }, [location.pathname]);
 
-    // Блокируем скролл страницы при открытом меню
     useEffect(() => {
         if (isMenuOpen) {
             document.body.style.overflow = 'hidden';
@@ -53,14 +54,14 @@ function Header() {
             <Link to="/" className="header__logo">
                 <img src={logo} alt="Logo" className="header__logo-img" />
                 <span>
-                    ТОВ <br /> ЕНЕРГОСОЛАРБУД
+                    {/* ТОВ <br /> ЕНЕРГОСОЛАРБУД */}
+                    {t('header.company')}
                 </span>
             </Link>
 
-            {/* Десктопная навигация */}
             <nav className="header__nav">
                 <NavLink to="/" end>
-                    Головна
+                    {t('header.home')}
                 </NavLink>
 
                 <div className="header__partners">
@@ -68,7 +69,7 @@ function Header() {
                         className={`header__partners-title ${isPartnerPage ? 'active' : ''}`}
                         onClick={() => setIsPartnersOpen(!isPartnersOpen)}
                     >
-                        Партнери
+                        {t('header.partners')}
                         <span className={`header__partners-arrow ${isPartnersOpen ? 'active' : ''}`}>
                             ▼
                         </span>
@@ -76,34 +77,33 @@ function Header() {
 
                     <div className={`header__partners-dropdown ${isPartnersOpen ? 'open' : ''}`}>
                         <NavLink
-                            to="/growatt"
-                            className="header__partners-link"
-                            onClick={() => setIsPartnersOpen(false)}
-                        >
-                            Growatt
-                        </NavLink>
-                        <NavLink
                             to="/kstar"
                             className="header__partners-link"
                             onClick={() => setIsPartnersOpen(false)}
                         >
                             Kstar
                         </NavLink>
+                        <NavLink
+                            to="/growatt"
+                            className="header__partners-link"
+                            onClick={() => setIsPartnersOpen(false)}
+                        >
+                            Growatt
+                        </NavLink>
                     </div>
                 </div>
 
-                <NavLink to="/modular-houses">Модульні будинки</NavLink>
-                <Link to="/#aboutUs">Про нас</Link>
-                <Link to="/#services">Послуги</Link>
+                <NavLink to="/modular-houses">{t('header.modularHouses')}</NavLink>
+                <Link to="/#aboutUs">{t('header.about')}</Link>
+                <Link to="/#services">{t('header.services')}</Link>
             </nav>
 
             <div className="header__desktop-btn">
                 <Link to="/#contacts">
-                    <Button style={{ padding: '6px 12px 6px 20px' }}>Зв'язатися</Button>
+                    <Button style={{ padding: '6px 12px 6px 20px' }}>{t('header.contact')}</Button>
                 </Link>
             </div>
 
-            {/* Кнопка открытия мобильного меню */}
             <button
                 type="button"
                 className="header__burger-btn"
@@ -113,13 +113,11 @@ function Header() {
                 <Menu size={28} />
             </button>
 
-            {/* Оверлей для закрытия по клику вне панели */}
             <div
                 className={`header__overlay ${isMenuOpen ? 'open' : ''}`}
                 onClick={() => setIsMenuOpen(false)}
             />
 
-            {/* Мобильное всплывающее меню / сайдбар */}
             <div className={`header__mobile-menu ${isMenuOpen ? 'open' : ''}`}>
                 <div className="header__mobile-top">
                     <button
@@ -133,62 +131,59 @@ function Header() {
                 </div>
 
                 <div className="header__mobile-list">
-                    {/* Аккордеон Партнери */}
                     <div className="header__mobile-item-group">
                         <div
                             className="header__mobile-item header__mobile-item--accordion"
                             onClick={() => setIsPartnersOpen(!isPartnersOpen)}
                         >
-                            <span>Партнери</span>
+                            <span>{t('header.partners')}</span>
                             {isPartnersOpen ? <Minus size={18} /> : <Plus size={18} />}
                         </div>
                         {isPartnersOpen && (
                             <div className="header__mobile-sublist">
-                                <NavLink to="/growatt" className="header__mobile-sublink">
-                                    Growatt
-                                </NavLink>
                                 <NavLink to="/kstar" className="header__mobile-sublink">
                                     Kstar
+                                </NavLink>
+                                <NavLink to="/growatt" className="header__mobile-sublink">
+                                    Growatt
                                 </NavLink>
                             </div>
                         )}
                     </div>
 
                     <NavLink to="/modular-houses" className="header__mobile-item">
-                        Модульні будинки
+                        {t('header.modularHouses')}
                     </NavLink>
 
                     <Link
                         onClick={() => setIsMenuOpen(false)}
                         to="/#aboutUs"
-                        className="header__mobile-item">Про нас</Link>
+                        className="header__mobile-item">{t('header.about')}</Link>
                     <Link
                         onClick={() => setIsMenuOpen(false)}
                         to="/#services"
-                        className="header__mobile-item">Послуги</Link>
+                        className="header__mobile-item">{t('header.services')}</Link>
                 </div>
 
-                {/* Переключатель языков */}
                 <div className="header__mobile-lang">
                     <button
                         type="button"
                         className={`header__lang-btn ${lang === 'UA' ? 'active' : ''}`}
-                        onClick={() => setLang('UA')}
+                        onClick={() => i18n.changeLanguage('uk')}
                     >
                         UA
                     </button>
                     <button
                         type="button"
                         className={`header__lang-btn ${lang === 'EN' ? 'active' : ''}`}
-                        onClick={() => setLang('EN')}
+                        onClick={() => i18n.changeLanguage('en')}
                     >
                         EN
                     </button>
                 </div>
 
-                {/* Кнопка действия */}
                 <button type="button" className="header__mobile-action-btn">
-                    <span>Зв'язатися</span>
+                    <span>{t('header.contact')}</span>
                     <span className="header__action-circle">
                         <ArrowRight size={16} />
                     </span>
