@@ -7,8 +7,10 @@ import SectionAside from '../../../../components/SectionAside/SectionAside';
 import CardHouse from '../../../../components/CardHouse/CardHouse';
 
 import modularHouses from '../../../../data/modularHouses';
+import { useTranslation } from 'react-i18next';
 
 function CatalogModular() {
+    const { t } = useTranslation();
     const [activeIndex, setActiveIndex] = useState(0);
     const mobileScrollRef = useRef(null);
 
@@ -44,11 +46,8 @@ function CatalogModular() {
     return (
         <section className='catalogModular' id='houses'>
             <div className='catalogModular__header'>
-                <SectionTitle variant='medium'>Базові конфігурації для точного старту</SectionTitle>
-                <SectionAside>
-                    Характеристики на картках є орієнтовними й слугують для вибору напряму;
-                    фінальні параметри визначаються під час проєктування.
-                </SectionAside>
+                <SectionTitle variant='medium'>{t('modular.catalogTitle')}</SectionTitle>
+                <SectionAside>{t('modular.catalogAside')}</SectionAside>
             </div>
 
             {/* Десктопная сетка из 3 колонок */}
@@ -56,9 +55,12 @@ function CatalogModular() {
                 {modularHouses.map(house => (
                     <CardHouse
                         key={house.key || house.id || house.name}
-                        name={house.name}
+                        name={t(`modularHouses.${house.id}.name`)}
                         img={house.img}
-                        data={house.data}
+                        data={[
+                            t('modular.houseArea', { value: t(`modularHouses.${house.id}.area`) }),
+                            t('modular.houseFloors', { value: t(`modularHouses.${house.id}.floors`) }),
+                        ]}
                     />
                 ))}
             </div>
@@ -76,9 +78,12 @@ function CatalogModular() {
                             key={`mob-${house.key || house.id || house.name}`}
                         >
                             <CardHouse
-                                name={house.name}
+                                name={t(`modularHouses.${house.id}.name`)}
                                 img={house.img}
-                                data={house.data}
+                                data={[
+                                    t('modular.houseArea', { value: t(`modularHouses.${house.id}.area`) }),
+                                    t('modular.houseFloors', { value: t(`modularHouses.${house.id}.floors`) }),
+                                ]}
                             />
                         </div>
                     ))}
@@ -92,7 +97,7 @@ function CatalogModular() {
                             type='button'
                             className={`catalogModular__dot ${activeIndex === index ? 'active' : ''}`}
                             onClick={() => scrollToIndex(index)}
-                            aria-label={`Перейти до будинку ${index + 1}`}
+                            aria-label={t('modular.houseDot', { number: index + 1 })}
                         />
                     ))}
                 </div>

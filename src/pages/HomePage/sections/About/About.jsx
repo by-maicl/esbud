@@ -17,6 +17,7 @@ import {
     ChevronRight,
     X,
 } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const aboutGalleryImages = Object.entries(
     import.meta.glob('../../../../assets/home-img/projects/*.{jpg,jpeg,png,webp}', {
@@ -28,6 +29,7 @@ const aboutGalleryImages = Object.entries(
     .map(([, src]) => src);
 
 function About() {
+    const { t } = useTranslation();
     const [isGalleryOpen, setIsGalleryOpen] = useState(false);
     const [activeImageIndex, setActiveImageIndex] = useState(0);
 
@@ -83,15 +85,15 @@ function About() {
             <section className='about' id='aboutUs'>
                 <Reveal>
                     <div className="about__left">
-                        <SectionTitle>Про нас</SectionTitle>
-                        <SectionSubtitle>Будуємо зв’язок між архітектурою та енергетикою</SectionSubtitle>
+                        <SectionTitle>{t('home.about.title')}</SectionTitle>
+                        <SectionSubtitle>{t('home.about.subtitle')}</SectionSubtitle>
                         <div className='about__img'>
-                            <img src={roofAboutSection} alt="Solar panels" />
-                            <img src={houseAboutSection} alt="Modal house" />
+                            <img src={roofAboutSection} alt={t('home.about.solarAlt')} />
+                            <img src={houseAboutSection} alt={t('home.about.houseAlt')} />
                             <button
                                 type="button"
                                 className="about__img-trigger"
-                                aria-label="Відкрити галерею"
+                                aria-label={t('home.about.openGallery')}
                                 onClick={() => {
                                     setActiveImageIndex(0);
                                     setIsGalleryOpen(true);
@@ -108,18 +110,12 @@ function About() {
 
                 <Reveal delay={300}>
                     <div className="about__right">
-                        <SectionAside className='about__company-name'>ТОВ «Енергосоларбуд»</SectionAside>
+                        <SectionAside className='about__company-name'>{t('home.about.company')}</SectionAside>
                         <div className='about__info-text'>
-                            <h4>Не окремі елементи, а узгоджена інфраструктура.</h4>
-                            <p>Ми створюємо комфортне, надійне та енергоефективне житло з 2018 року, яке відповідає сучасним
-                                стандартам якості та дизайну.</p>
-                            <p>Наші будинки виготовляються з використанням міцних металевих, дерев’яних або змішаних
-                                (металево-дерев’яних) каркасів. Каркаси наших будинків забезпечують довговічність конструкцій
-                                та стійкість до зовнішніх впливів.</p>
-                            <p>Ми пропонуємо українському ринку обладнання для відновлюваної енергетики.
-                                ТОВ «ЕНЕРГОСОЛАРБУД» є офіційним представником провідного світового китайського виробника GROWATT,
-                                та офіційним дистриб’ютором великої міжнародної китайської компанії KSTAR
-                                (Shenzhen KSTAR NEW ENERGY Co, Ltd).</p>
+                            <h4>{t('home.about.statement')}</h4>
+                            <p>{t('home.about.paragraph1')}</p>
+                            <p>{t('home.about.paragraph2')}</p>
+                            <p>{t('home.about.paragraph3')}</p>
                         </div>
                     </div>
                 </Reveal>
@@ -135,13 +131,13 @@ function About() {
                             className="about__gallery"
                             role="dialog"
                             aria-modal="true"
-                            aria-label="Галерея про нас"
+                            aria-label={t('home.about.gallery')}
                             onClick={(event) => event.stopPropagation()}
                         >
                             <button
                                 type="button"
                                 className="about__gallery-close"
-                                aria-label="Закрити галерею"
+                                aria-label={t('home.about.closeGallery')}
                                 onClick={() => setIsGalleryOpen(false)}
                             >
                                 <X size={24} />
@@ -150,7 +146,7 @@ function About() {
                             <button
                                 type="button"
                                 className="about__gallery-arrow"
-                                aria-label="Попереднє зображення"
+                                aria-label={t('home.about.previousImage')}
                                 onClick={showPrevious}
                             >
                                 <ChevronLeft size={30} />
@@ -161,14 +157,14 @@ function About() {
                                     key={currentImage}
                                     className="about__gallery-image"
                                     src={currentImage}
-                                    alt={`Проєкт ${activeImageIndex + 1}`}
+                                    alt={t('home.about.project', { number: activeImageIndex + 1 })}
                                 />
                             </div>
 
                             <button
                                 type="button"
                                 className="about__gallery-arrow"
-                                aria-label="Наступне зображення"
+                                aria-label={t('home.about.nextImage')}
                                 onClick={showNext}
                             >
                                 <ChevronRight size={30} />

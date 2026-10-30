@@ -1,4 +1,5 @@
 import { NavLink,Link } from 'react-router';
+import { useTranslation } from 'react-i18next';
 
 
 import './Footer.scss';
@@ -8,6 +9,7 @@ import instagramIcon from '../../assets/social/instagram.png';
 import facebookIcon from '../../assets/social/facebook.png';
 
 function Footer() {
+    const { t } = useTranslation();
     const scrollToTop = () => {
         window.scrollTo({
             top: 0,
@@ -25,8 +27,8 @@ function Footer() {
                             <img src={logo} alt="Logo" />
                         </div>
                         <div>
-                            <h2>ТОВ «Енергосоларбуд»</h2>
-                            <p>Енергія + Простір</p>
+                            <h2>{t('header.company')}</h2>
+                            <p>{t('footer.tagline')}</p>
                         </div>
                     </div>
 
@@ -53,27 +55,24 @@ function Footer() {
                     </div>
                 </div>
 
-                {/* 2. Навигация */}
                 <div className='footer__element'>
-                    <h3 className='footer__title'>Навігація</h3>
-                    <NavLink to="/" end onClick={scrollToTop}>Головна</NavLink>
-                    <NavLink to="/kstar" onClick={scrollToTop}>Партнери</NavLink>
-                    <NavLink to="/modular-houses" onClick={scrollToTop}>Модульні будинки</NavLink>
-                    <Link to="/#aboutUs">Про нас</Link>
-                    <Link to="/#services">Послуги</Link>
+                    <h3 className='footer__title'>{t('footer.navigation')}</h3>
+                    <NavLink to="/" end onClick={scrollToTop}>{t('header.home')}</NavLink>
+                    <NavLink to="/kstar" onClick={scrollToTop}>{t('header.partners')}</NavLink>
+                    <NavLink to="/modular-houses" onClick={scrollToTop}>{t('header.modularHouses')}</NavLink>
+                    <Link to="/#aboutUs">{t('header.about')}</Link>
+                    <Link to="/#services">{t('header.services')}</Link>
 
                 </div>
 
-                {/* 3. Направления */}
                 <div className='footer__element'>
-                    <h3 className='footer__title'>Напрями</h3>
-                    <NavLink to="/modular-houses" onClick={scrollToTop}>Модульні будинки</NavLink>
-                    <NavLink to="/kstar" onClick={scrollToTop}>Сонячні системи</NavLink>
+                    <h3 className='footer__title'>{t('footer.directions')}</h3>
+                    <NavLink to="/modular-houses" onClick={scrollToTop}>{t('header.modularHouses')}</NavLink>
+                    <NavLink to="/kstar" onClick={scrollToTop}>{t('footer.solarSystems')}</NavLink>
                 </div>
 
-                {/* 4. Контакты */}
                 <div className='footer__element'>
-                    <h3 className='footer__title'>Контакти</h3>
+                    <h3 className='footer__title'>{t('footer.contacts')}</h3>
                     <a href="tel:+380635982191">+38 063 598 2191</a>
                     <a href="mailto:tovesb.info@gmail.com">tovesb.info@gmail.com</a>
                     <a 
@@ -81,19 +80,19 @@ function Footer() {
                         target='_blank' 
                         rel="noreferrer"
                     >
-                        Україна м. Київ вул. Андрія Верхогляда, буд. 4, прим.122
+                        {t('footer.address')}
                     </a>
                 </div>
             </div>
 
             <h2 className='footer__company-name'>
-                ТОВ <br className="footer__br-mobile" />
-                «Енергосоларбуд»
+                {t('footer.companyPrefix')} <br className="footer__br-mobile" />
+                {t('footer.companyName')}
             </h2>
 
             <div className='footer__subtext'>
-                <p>© 2026 ТОВ «Енергосоларбуд». Усі права захищено.</p>
-                <p>Інформація на сайті має ознайомчий характер.</p>
+                <p>{t('footer.copyright')}</p>
+                <p>{t('footer.disclaimer')}</p>
             </div>
         </footer>
     );

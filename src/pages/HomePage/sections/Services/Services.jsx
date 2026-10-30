@@ -7,33 +7,35 @@ import SectionSubtitle from '../../../../components/SectionSubtitle/SectionSubti
 import SectionAside from '../../../../components/SectionAside/SectionAside';
 import Reveal from '../../../../components/Reveal/Reveal';
 import ArrowButton from '../../../../components/ArrowButton/ArrowButton';
+import { useTranslation } from 'react-i18next';
 
 function Services() {
+    const { t } = useTranslation();
     return (
         <section className='services' id='services'>
-            <SectionTitle>Наші послуги</SectionTitle>
+            <SectionTitle>{t('home.services.title')}</SectionTitle>
             
             <div className='services__grid'>
                 <SectionSubtitle className='services__subtitle'>
-                    Створюємо простір, <br /> підсилюємо його енергією.
+                    {t('home.services.subtitleFirst')}<br />
+                    {t('home.services.subtitleSecond')}
                 </SectionSubtitle>
                 
                 <SectionAside className='services__aside'>
-                    Кожен напрям може бути окремим проєктом або частиною комплексного рішення.
+                    {t('home.services.aside')}
                 </SectionAside>
 
                 <Reveal className='services__card-reveal'>
                     <NavLink to="/kstar" className='services__link'>
                         <div className="services__option services__option--solar">
                             <p className='services__option-title'>
-                                <span></span>Енергетика
+                                <span></span>{t('home.services.energy')}
                             </p>
                             <div className='services__option-info'>
                                 <div className='services__option-text'>
-                                    <h4>Сонячні панелі</h4>
+                                    <h4>{t('home.services.solarPanels')}</h4>
                                     <p>
-                                        Мережеві, гібридні та автономні конфігурації для дому й бізнесу,
-                                        з можливістю накопичення та моніторингу.
+                                        {t('home.services.solarText')}
                                     </p>
                                 </div>
                                 <ArrowButton className='services__option-btn' />
@@ -46,14 +48,13 @@ function Services() {
                     <NavLink to="/modular-houses" className='services__link'>
                         <div className="services__option services__option--house">
                             <p className='services__option-title'>
-                                <span></span>Будівництво
+                                <span></span>{t('home.services.construction')}
                             </p>
                             <div className='services__option-info'>
                                 <div className='services__option-text'>
-                                    <h4>Модульні будинки</h4>
+                                    <h4>{t('home.services.modularHouses')}</h4>
                                     <p>
-                                        Житлові, гостьові та комерційні формати з
-                                        продуманим плануванням, інженерією й можливістю масштабування.
+                                        {t('home.services.modularText')}
                                     </p>
                                 </div>
                                 <ArrowButton className='services__option-btn' />

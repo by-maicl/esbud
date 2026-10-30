@@ -26,7 +26,6 @@
         object-fit: contain;
     }
 
-    // Десктопный навбар
     &__nav {
         display: flex;
         align-items: center;
@@ -108,7 +107,6 @@
         }
     }
 
-    // Бургер и мобильные элементы (по умолчанию скрыты)
     &__burger-btn {
         display: none;
         background: none;
@@ -126,9 +124,6 @@
         display: none;
     }
 
-    // ==========================================
-    // Мобильная адаптация (max-width: 992px / 768px)
-    // ==========================================
     @media (max-width: 992px) {
         margin: 16px 20px;
 
@@ -161,10 +156,7 @@
             }
         }
 
-        // Выдвижное мобильное окно (как на макете справа)
            @media (max-width: 992px) {
-    
-               // ...
                &__mobile-menu {
                    display: flex;
                    flex-direction: column;
@@ -282,21 +274,13 @@
             }
         }
 
-        // Кнопка «Зв'язатися» со стрелкой
         &__mobile-action-btn {
-            margin-top: auto;
-            padding: 8px 8px 8px 24px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            background: #194677;
-            color: #fff;
-            border: none;
-            border-radius: 40px;
-            font-size: 15px;
-            font-weight: 500;
-            cursor: pointer;
-            margin-top: 24px;
+            margin-top: 25px;
+            width: 100%;
+
+            button {
+                width: 100%;
+            }
         }
 
         &__action-circle {

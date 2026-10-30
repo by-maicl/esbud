@@ -6,16 +6,15 @@ import Reveal from '../../../../components/Reveal/Reveal';
 import Card from '../../../../components/Card/Card';
 
 import modularFrame from '../../../../data/modularFrame';
+import { useTranslation } from 'react-i18next';
 
 function FrameModular() {
+    const { t } = useTranslation();
     return (
         <section className='frameModular'>
             <div className='frameModular__header'>
-                <SectionTitle variant='medium'>Каркас</SectionTitle>
-                <SectionAside>
-                    Ми виготовляємо надійні металеві та дерев’яні каркаси
-                    для модульних будинків, які забезпечують міцність і довговічність споруди
-                </SectionAside>
+                <SectionTitle variant='medium'>{t('modular.frameTitle')}</SectionTitle>
+                <SectionAside>{t('modular.frameAside')}</SectionAside>
             </div>
 
             <div className='frameModular__cards'>
@@ -26,12 +25,12 @@ function FrameModular() {
                     >
                         <Card
                             variant='secondary'
-                            title={el.title}
+                            title={t(`modularFrame.${el.id}.title`)}
                             icon={el.icon}
                         >
                             <ul className='frameModular__card-list'>
-                                {el.text.map((listEl, index) => (
-                                    <li key={index}>{listEl}</li>
+                                {el.text.map((_, index) => (
+                                    <li key={index}>{t(`modularFrame.${el.id}.text.${index + 1}`)}</li>
                                 ))}
                             </ul>
                         </Card>

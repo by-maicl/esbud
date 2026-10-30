@@ -6,25 +6,26 @@ import Reveal from '../../../../components/Reveal/Reveal';
 import Card from '../../../../components/Card/Card';
 
 import kstarAdvantages from '../../../../data/kstarAdvantages';
+import { useTranslation } from 'react-i18next';
 
 function WhyKstar() {
+    const { t } = useTranslation();
     return (
         <section className='whyKstar'>
             <div className='whyKstar__header'>
-                <SectionTitle variant='medium'>Чому KSTAR?</SectionTitle>
-                <SectionAside>KSTAR об'єднує в єдину систему гібридні інвертори, акумуляторні модулі,
-                    системи керування EMS, резервне живлення, сонячну генерацію та генератори.</SectionAside>
+                <SectionTitle variant='medium'>{t('kstar.whyTitle')}</SectionTitle>
+                <SectionAside>{t('kstar.whyAside')}</SectionAside>
             </div>
 
             <div className='whyKstar__cards'>
                 {kstarAdvantages.map((el, index) => (
                     <Reveal key={el.id} delay={index * 150}>
                         <Card
-                            title={el.title}
+                            title={t(`kstarAdvantages.${el.id}.title`)}
                             icon={el.icon}
                             variant='kstar'
                         >
-                            {el.description}
+                            {t(`kstarAdvantages.${el.id}.description`)}
                         </Card>
                     </Reveal>
                 ))}

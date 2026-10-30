@@ -1,11 +1,265 @@
 {
     "header": {
+        "companyPrefix": "LLC",
+        "companyName": "Energosolarbuild",
         "company": "LLC ENERGOSOLARBUILD",
         "home": "Home",
         "partners": "Partners",
         "modularHouses": "Modular Houses",
         "about": "About Us",
         "services": "Services",
-        "contact": "Contact Us"
+        "contact": "Contact Us",
+        "openMenu": "Open menu",
+        "closeMenu": "Close menu"
+    },
+    "footer": {
+        "tagline": "Energy + Space",
+        "companyPrefix": "LLC",
+        "companyName": "Energosolarbuild",
+        "navigation": "Navigation",
+        "directions": "Directions",
+        "contacts": "Contacts",
+        "solarSystems": "Solar systems",
+        "address": "Ukraine, Kyiv, 4 Andriia Verkhohliada St., office 122",
+        "copyright": "© 2026 LLC Energosolarbuild. All rights reserved.",
+        "disclaimer": "The information on this website is for reference purposes only."
+    },
+    "home": {
+        "hero": {
+            "companyShort": "ENERGOSOLARBUILD",
+            "title": "Create a better future with ENERGOSOLARBUILD",
+            "text": "Reduce electricity costs, gain energy independence, and switch to clean renewable energy with intelligent solar solutions for your home."
+        },
+        "about": {
+            "title": "About Us",
+            "subtitle": "Building a connection between architecture and energy",
+            "openGallery": "Open gallery",
+            "solarAlt": "Solar panels",
+            "houseAlt": "Modular house",
+            "company": "LLC Energosolarbuild",
+            "statement": "Not separate components, but coordinated infrastructure.",
+            "paragraph1": "Since 2018, we have been creating comfortable, reliable, and energy-efficient housing that meets modern quality and design standards.",
+            "paragraph2": "Our homes are built using durable metal, timber, or hybrid (metal-and-timber) frames. These frames ensure structural longevity and resistance to external factors.",
+            "paragraph3": "We offer renewable energy equipment to the Ukrainian market. ENERGOSOLARBUILD LLC is an official representative of leading global Chinese manufacturer GROWATT and an official distributor of the major international Chinese company KSTAR (Shenzhen KSTAR NEW ENERGY Co, Ltd).",
+            "gallery": "About us gallery",
+            "closeGallery": "Close gallery",
+            "previousImage": "Previous image",
+            "nextImage": "Next image",
+            "project": "Project {{number}}"
+        },
+        "services": {
+            "title": "Our Services",
+            "subtitleFirst": "We create spaces,",
+            "subtitleSecond": "and empower them with energy.",
+            "aside": "Each direction can be a standalone project or part of a comprehensive solution.",
+            "energy": "Energy",
+            "solarPanels": "Solar panels",
+            "solarText": "Grid-tied, hybrid, and off-grid configurations for homes and businesses, with storage and monitoring options.",
+            "construction": "Construction",
+            "modularHouses": "Modular houses",
+            "modularText": "Residential, guest, and commercial formats with well-designed layouts, engineering, and scalability."
+        },
+        "system": {
+            "title": "Designed for real-world systems",
+            "energyTitle": "Energy systems",
+            "energyAlt": "Solar panels",
+            "energyText": "We offer renewable energy equipment to the Ukrainian market. ENERGOSOLARBUILD LLC is an official representative of a leading global Chinese manufacturer and an official distributor of the major international Chinese company KSTAR (Shenzhen KSTAR NEW ENERGY Co, Ltd).",
+            "modularTitle": "Modular houses",
+            "modularAlt": "Modular house",
+            "modularText": "We create comfortable, reliable, and energy-efficient homes that meet modern quality and design standards. Our homes are built using durable metal, timber, or hybrid (metal-and-timber) frames. These frames ensure structural longevity and resistance to external factors."
+        },
+        "directions": {
+            "title": "From idea to finished system",
+            "aside": "We bring in the right specialists in sequence to keep the solution consistent at every stage."
+        },
+        "partners": "Our Partners",
+        "contacts": {
+            "title": "Let's start with your needs",
+            "text": "Tell us what kind of space or energy solution you need. The Energosolarbuild team will help structure the task and identify the next step.",
+            "address": "Ukraine, Kyiv, 4 Andriia Verkhohliada St., office 122"
+        }
+    },
+    "contactSection": {
+        "title": "Let's configure a solution for your needs",
+        "text": "Send us a short request — the Energosolarbuild team will help you choose a category, define the requirements, and plan the next step.",
+        "contact": "Contact us"
+    },
+    "directions": {
+        "1": {"title": "Pre-project analysis", "text": "Initial data, scenarios, constraints, and technical requirements."},
+        "2": {"title": "Design", "text": "Planning, structural design, engineering, and energy configuration."},
+        "3": {"title": "System configuration", "text": "Selecting compatible materials, equipment, and components."},
+        "4": {"title": "Installation", "text": "Preparation, installation, connection, and quality control."}
+    },
+    "modular": {
+        "heroPath": "Home / Modular houses",
+        "heroTitle": "Modular houses",
+        "heroTitleSuffix": "for living and business.",
+        "heroText": "Residential, guest, and commercial formats. Choose a house from the catalog — we'll tailor its layout and configuration to your project.",
+        "catalogButton": "View house catalog",
+        "residential": "Residential",
+        "guest": "Guest",
+        "commercial": "Commercial",
+        "badge": "Modular house · Catalog",
+        "startTitle": "Start with the right use case",
+        "startAside": "Our core products help you explore the options. Floor area, configuration, capacity, and engineering are tailored to each site.",
+        "startCards": {
+            "1": {"title": "Modular houses", "text": "Residential, guest, and commercial formats with ready-to-use spatial layouts."},
+            "2": {"title": "Solar solutions", "text": "Grid-tied, hybrid, and scalable systems for different consumption profiles."}
+        },
+        "frameTitle": "Frame",
+        "frameAside": "We build reliable metal and timber frames for modular houses, ensuring strength and structural longevity.",
+        "catalogTitle": "Core configurations for a precise start",
+        "catalogAside": "The specifications shown on the cards are indicative and help you choose a direction; final parameters are determined during design.",
+        "houseLabel": "Modular house",
+        "houseArea": "Floor area, m²: {{value}}",
+        "houseFloors": "Storeys: {{value}}",
+        "houseDot": "Go to house {{number}}",
+        "stagesTitle": "Project stages",
+        "stagesAside": "A block module is the core structural unit of a modular building: a prefabricated construction element ready for installation.",
+        "faqTitle": "What to know before getting started",
+        "faqAside": "These answers describe our general approach. Specific parameters depend on the project and agreed requirements."
+    },
+    "modularFaq": {
+        "1": {"question": "How long does it take to build a modular house?", "answer": "On average, 2 to 4 months, depending on size and configuration."},
+        "2": {"question": "Can the layout be changed?", "answer": "Yes. Modular house layouts can be changed during design or after construction. You can request a custom layout before construction and carry out interior renovations after completion."},
+        "3": {"question": "What materials are used?", "answer": "Modular houses can use a range of materials, with metal or timber frames as the main structural base. Walls and floors often use OSB boards, SIP panels, or sandwich panels with expanded polystyrene or other insulation."},
+        "4": {"question": "Can you live in this kind of house during winter?", "answer": "Yes. Modular houses can be safely used in winter because they are well insulated and have a reliable heating system."},
+        "5": {"question": "What determines the price of a house?", "answer": "The price depends on floor area, project complexity, selected structural and finishing materials, insulation level, configuration, engineering systems (water, heating, electricity, etc.), and whether a foundation is required. Optional features such as plumbing fixtures, air conditioning, or landscaping also increase the final price."}
+    },
+    "modularFrame": {
+        "1": {"title": "Timber", "text": {"1": "Lightweight and eco-friendly", "2": "Energy-efficient", "3": "Suitable for fast construction", "4": "A reliable foundation for modular houses."}},
+        "2": {"title": "Metal", "text": {"1": "High strength and durability", "2": "Fire-resistant", "3": "Resistant to deformation", "4": "LGSF technology for modern projects"}},
+        "3": {"title": "SIP panels", "text": {"1": "Fast installation", "2": "High thermal insulation", "3": "Lightweight construction", "4": "An ideal solution for modular houses"}}
+    },
+    "modularHouses": {
+        "1": {"name": "House 1", "area": "82", "floors": "2"},
+        "2": {"name": "House 2", "area": "35", "floors": "1"},
+        "3": {"name": "House 3", "area": "32.5", "floors": "1"},
+        "4": {"name": "House 4", "area": "30", "floors": "1"},
+        "5": {"name": "House 5", "area": "103.7", "floors": "1"},
+        "6": {"name": "House 6", "area": "96", "floors": "1"}
+    },
+    "modularStages": {
+        "1": {"title": "Block module structure", "text": "Frame, walls, roof, and floor"},
+        "2": {"title": "Block module fit-out", "text": "Engineering systems and finishes"},
+        "3": {"title": "Preparation stage", "text": "Design and permit documentation"},
+        "4": {"title": "Factory stage", "text": "Module production, interior and exterior finishes"},
+        "5": {"title": "Transport and installation", "text": "Transporting modules, on-site installation, and connecting engineering systems"},
+        "6": {"title": "Final stage", "text": "Finishing, commissioning, and handover for operation"}
+    },
+    "growatt": {
+        "heroPath": "Partners / Growatt",
+        "heroTitle": "Solar inverters",
+        "heroTitleSuffix": "and Growatt energy storage",
+        "heroText": "Inverters and storage systems for solar energy. Choose equipment to meet your home or business needs.",
+        "selectEquipment": "Choose Growatt equipment",
+        "inverters": "Inverters",
+        "storage": "Energy storage",
+        "monitoring": "Monitoring",
+        "imageTitle": "Solar inverters",
+        "imageAlt": "Growatt inverters",
+        "imageText": "Equipment for your energy system",
+        "aboutTitle": "About Us",
+        "aboutSubtitle": "ENERGOSOLARBUILD LLC is an official representative of GROWATT equipment, a global provider of distributed energy solutions.",
+        "aboutText": "Growatt was founded in 2011 in Shenzhen, China, and specializes in developing and manufacturing equipment for electricity generation, storage, and efficient use.",
+        "countries": "Countries",
+        "users": "Users",
+        "objects": "Typical installations worldwide",
+        "millionUsers": "6 million",
+        "directionsTitle": "Growatt's main areas",
+        "directionsAside": "The company's portfolio includes solar inverters, energy storage systems, EV chargers, and intelligent energy management solutions.",
+        "whyTitle": "Why Growatt?",
+        "whyAside": "Growatt offers a wide range of solar inverters from 1 kW to 2.52 MW. They can be used with energy storage solutions in both grid-tied and off-grid systems.",
+        "productsTitle": "Growatt products",
+        "productsAside": "Growatt lets you combine generation, storage, consumption, and EV charging in one energy system.",
+        "productsNote": "The system can be configured for different needs and scaled to the required power and capacity.",
+        "productDot": "Go to slide {{number}}",
+        "rewardsTitle": "A respected and established manufacturer"
+    },
+    "directionsGrowatt": {
+        "1": {"title": "Solar inverters", "text": "Grid-tied, hybrid, and off-grid solutions for homes, commercial sites, and industrial facilities."},
+        "2": {"title": "Energy storage systems", "text": "Battery solutions for storing surplus solar energy, backup power, and greater energy independence."},
+        "3": {"title": "Electric vehicle charging stations", "text": "Growatt EV charging solutions for residential and commercial use."},
+        "4": {"title": "Monitoring and energy management", "text": "Monitoring systems let you track equipment operation and view energy generation, consumption, and storage data."}
+    },
+    "growattProducts": {
+        "1": {"name": "MAX 100-150KTL3-X LV", "title": "Inverters", "description": "MIC, MIN, MOD, MID, MAX"},
+        "2": {"name": "SPF 6000 ES Plus", "title": "Batteries", "description": "ARK, AXE, BDC, HVC"},
+        "3": {"name": "ShineLink-X2", "title": "Accessories", "description": "Connection and control devices"},
+        "4": {"name": "THOR 11/22AS-S/P/SE/PE", "title": "EV chargers", "description": "THOR and other EV solutions"},
+        "5": {"name": "Growatt Monitoring Platform", "title": "Monitoring", "description": "Energy consumption monitoring solutions"}
+    },
+    "growattRewards": {
+        "1": {"text": "First-class product performance"},
+        "2": {"text": "EUPD Research, an international market research firm, named Growatt the top inverter brand in 22 countries in 2022."},
+        "3": {"title": "According to Frost & Sullivan", "text": "In 2021, Growatt was already the world's third-largest supplier of photovoltaic inverters."},
+        "4": {"title": "According to Frost & Sullivan", "text": "In 2021, Growatt was already the world's third-largest supplier of photovoltaic inverters."}
+    },
+    "growattReasons": {
+        "1": {"title": "Global presence", "text": "Growatt solutions are installed in 180+ countries."},
+        "2": {"title": "Wide product range", "text": "From residential inverters to solutions for commercial and industrial facilities."},
+        "3": {"title": "In-house technology development", "text": "Growatt reports more than 1,000 R&D engineers and 283+ patents."},
+        "4": {"title": "Intelligent monitoring", "text": "Remote equipment monitoring and diagnostics."},
+        "5": {"title": "Scalability", "text": "Solutions can be selected to meet the needs of a home, business, or large-scale energy facility."}
+    },
+    "kstar": {
+        "heroPath": "Partners / KSTAR",
+        "heroTitle": "Energy storage.",
+        "heroTitleSuffix": "Backup power with KSTAR.",
+        "heroText": "Battery systems and hybrid inverters for homes and businesses. Choose a solution for your backup power needs.",
+        "selectSystem": "Choose a KSTAR system",
+        "home": "For homes",
+        "business": "For business",
+        "backup": "Backup power",
+        "imageAlt": "KSTAR system",
+        "imageText": "KSTAR · System for a private home",
+        "aboutTitle": "About Us",
+        "aboutSubtitle": "KSTAR is a leading brand in power electronics and new energy",
+        "aboutText": "KSTAR specializes in power electronics and new energy equipment, successfully deployed in critical data center infrastructure, modular and photovoltaic solutions, and electrical energy storage solutions.",
+        "whyTitle": "Why KSTAR?",
+        "whyAside": "KSTAR combines hybrid inverters, battery modules, EMS control systems, backup power, solar generation, and generators into one system.",
+        "securityTitle": "Multi-level protection",
+        "securityAside": "KSTAR takes a comprehensive approach to the safety of energy storage systems.",
+        "solutionsTitle": "Who is KSTAR for?",
+        "solutionsAside": "KSTAR solutions for a range of industries",
+        "projectsTitle": "KSTAR in Ukraine",
+        "projectsAside": "The system can be configured for different needs and scaled to the required power and capacity.",
+        "projectDot": "Go to slide {{number}}"
+    },
+    "kstarAbout": {
+        "1": {"title": "UP TO 50%", "subtitle": "Cost savings", "description": "Our houses are built using durable metal, timber, or hybrid (metal-and-timber) frames."},
+        "2": {"title": "5 years", "subtitle": "Official warranty", "description": "A full manufacturer warranty for the equipment and its reliable operation from the official distributor."},
+        "3": {"title": "30+ years", "subtitle": "Manufacturer experience", "description": "The international reliability of KSTAR, a leading global developer of power electronics and energy storage solutions."}
+    },
+    "kstarAdvantages": {
+        "1": {"title": "In-house technologies", "description": "KSTAR has its own R&D and manufacturing facilities covering UPS systems, inverters, energy storage systems, and EV charging infrastructure."},
+        "2": {"title": "Reliable battery solutions", "description": "BluePulse uses battery cells from CATL and EVE. The listed systems offer more than 8,000 cycles and a 10-year performance warranty."},
+        "3": {"title": "Scalability", "description": "The system can be configured for different needs and scaled to the required power and capacity."},
+        "4": {"title": "Safety", "description": "Systems include comprehensive monitoring and protection. Liquid-cooled systems feature smoke and CO sensors, emergency shutdown, aerosol fire suppression, temperature monitoring, and other safety features."}
+    },
+    "kstarSecurity": {
+        "1": {"title": "Multi-level fire protection", "description": "Two-stage thermal activation of the fire suppression system."},
+        "2": {"title": "Intelligent ventilation control", "description": "Monitoring of combustion gases and signs of thermal failure."},
+        "3": {"title": "Early warning system", "description": "Rapid response on-site and remotely."},
+        "4": {"title": "Explosion protection design", "description": "Automatic internal pressure release and water-based suppression."}
+    },
+    "kstarSolution": {
+        "1": {"title": "Manufacturing", "description": "Backup power for equipment and optimized consumption."},
+        "2": {"title": "Farms and agribusiness", "description": "Power for pumps, refrigeration, automated production lines, and other critical equipment."},
+        "3": {"title": "Private homes", "description": "Backup power and integration of solar PV, a generator, and EV charging."},
+        "4": {"title": "EV infrastructure", "description": "Additional capacity for EV charging stations during peak demand."},
+        "5": {"title": "Commercial facilities", "description": "Load management, energy storage, and optimized electricity use."}
+    },
+    "kstarProjects": {
+        "1": {"name": "Dnipropetrovsk region", "title": "Solar PV projects for sale", "description": "Nikopol solar plant, DTEK 200 MW"},
+        "2": {"name": "Ternopil region", "title": "Energy storage for electricity arbitrage", "description": "Phase 2 – 2750 kW and 11825 kWh • Phase 3 – 750 kW and 3225 kWh • Phase 4 – 1000 kW and 4300 kWh • Phase 5 – 800 kW and 3440 kWh"},
+        "3": {"name": "Kyiv region", "title": "Power for private homes", "description": "System retrofit by expanding backup capacity from 200 kW and 400 kWh to 750 kW and 1290 kWh, respectively"},
+        "4": {"name": "Vinnytsia region", "title": "Energy storage for laundries", "description": "100 kW | 430 kWh"},
+        "5": {"name": "Chernihiv region", "title": "Energy storage for farms and production", "description": "200 kW | 394 kWh"},
+        "6": {"name": "Western Ukraine", "title": "Energy storage for warehouses and shopping malls", "description": "1000 kW | 3940 kWh"},
+        "7": {"name": "Vinnytsia region", "title": "Energy storage for furniture manufacturers", "description": "500 kW | 960 kWh"},
+        "8": {"name": "Kharkiv", "title": "Energy storage for EV infrastructure", "description": "200 kW | 394 kWh"},
+        "9": {"name": "Kyiv region", "title": "Energy storage for condominium associations", "description": "70 kW | 140 kWh"},
+        "10": {"name": "Chernivtsi", "title": "Home energy storage", "description": "12 kW | 20 kWh"}
     }
 }

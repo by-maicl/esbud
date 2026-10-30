@@ -7,8 +7,10 @@ import SectionSubtitle from '../../../../components/SectionSubtitle/SectionSubti
 import ArrowButton from '../../../../components/ArrowButton/ArrowButton';
 
 import systems from '../../../../data/systems';
+import { useTranslation } from 'react-i18next';
 
 function System() {
+    const { t } = useTranslation();
     const [activeIndex, setActiveIndex] = useState(0);
     const [direction, setDirection] = useState('next');
 
@@ -35,7 +37,7 @@ function System() {
 
     return (
         <section className='system'>
-            <SectionTitle>Розроблено для реальних систем</SectionTitle>
+            <SectionTitle>{t('home.system.title')}</SectionTitle>
 
             {/* Десктопная версия: слайдер со стрелками */}
             <div className="system__desktop-slider">
@@ -44,7 +46,7 @@ function System() {
                         key={`image-${activeIndex}`}
                         className={slideClass}
                         src={activeSystem.image}
-                        alt={activeSystem.alt}
+                        alt={t(`home.system.${activeIndex === 0 ? 'energyAlt' : 'modularAlt'}`)}
                     />
 
                     <div
@@ -52,10 +54,10 @@ function System() {
                         className={`system__info ${slideClass}`}
                     >
                         <SectionSubtitle className="system__subtitle">
-                            {activeSystem.title}
+                            {t(`home.system.${activeIndex === 0 ? 'energyTitle' : 'modularTitle'}`)}
                         </SectionSubtitle>
 
-                        <p>{activeSystem.text}</p>
+                        <p>{t(`home.system.${activeIndex === 0 ? 'energyText' : 'modularText'}`)}</p>
 
                         <div className="system__buttons">
                             <ArrowButton
@@ -78,11 +80,11 @@ function System() {
                 {systems.map((item, idx) => (
                     <article key={idx} className="system__mobile-item">
                         <div className="system__mobile-img-wrapper">
-                            <img src={item.image} alt={item.alt || item.title} />
+                            <img src={item.image} alt={t(`home.system.${idx === 0 ? 'energyAlt' : 'modularAlt'}`)} />
                         </div>
                         <div className="system__mobile-content">
-                            <h3>{item.title}</h3>
-                            <p>{item.text}</p>
+                            <h3>{t(`home.system.${idx === 0 ? 'energyTitle' : 'modularTitle'}`)}</h3>
+                            <p>{t(`home.system.${idx === 0 ? 'energyText' : 'modularText'}`)}</p>
                         </div>
                     </article>
                 ))}

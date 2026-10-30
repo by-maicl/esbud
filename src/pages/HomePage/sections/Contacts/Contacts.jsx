@@ -5,14 +5,15 @@ import IconBlock from '../../../../components/IconBlock/IconBlock';
 import Button from '../../../../components/Button/Button';
 
 import { Phone, Mail, MapPin } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 function Contacts() {
+    const { t } = useTranslation();
     return (
         <section className='contacts' id='contacts'>
             <div>
-                <SectionTitle size={50} variant='medium'>Почнімо з вашого сценарію</SectionTitle>
-                <p>Розкажіть, який простір або енергетичне рішення вам потрібне. Команда ТОВ «Енергосоларбуд»
-                    допоможе структурувати задачу та визначити наступний крок.</p>
+                <SectionTitle size={50} variant='medium'>{t('home.contacts.title')}</SectionTitle>
+                <p>{t('home.contacts.text')}</p>
             </div>
             <div className='contacts__info'>
                 <ul>
@@ -26,10 +27,10 @@ function Contacts() {
                     </li>
                     <li>
                         <IconBlock size={30} icon={MapPin} />
-                        Україна, м. Київ, вул. Андрія Верхогляда, буд. 4, прим.122
+                        {t('home.contacts.address')}
                     </li>
                 </ul>
-                <Button className='contacts__btn'>Зв'язатися</Button>
+                <a href="tel:+380635982191"><Button className='contacts__btn'>{t('contactSection.contact')}</Button></a>
             </div>
             <iframe
                 className='contacts__map'

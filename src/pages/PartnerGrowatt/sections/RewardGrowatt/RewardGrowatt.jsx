@@ -7,11 +7,13 @@ import CardHorizontal from '../../../../components/CardHorizontal/CardHorizontal
 import growattRewardsImg from '../../../../assets/growatt/rewards.jpg'
 import growattRewards from '../../../../data/growattRewards'
 import { Check } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 function RewardGrowatt() {
+    const { t } = useTranslation();
     return (
         <section className='rewardGrowatt'>
-            <SectionTitle variant='medium' className='growattText'>Поважний і відомий виробник</SectionTitle>
+            <SectionTitle variant='medium' className='growattText'>{t('growatt.rewardsTitle')}</SectionTitle>
             <div className='rewardGrowatt__wrapp'>
                 <Reveal>
                     <img src={growattRewardsImg} alt="Growatt Rewards" />
@@ -23,9 +25,9 @@ function RewardGrowatt() {
                             <CardHorizontal
                                 variant='growatt'
                                 icon={Check}
-                                title={reward.title}
+                                title={reward.id > 2 ? t(`growattRewards.${reward.id}.title`) : reward.title}
                             >
-                                {reward.text}
+                                {t(`growattRewards.${reward.id}.text`)}
                             </CardHorizontal>
                         </Reveal>
                     ))}

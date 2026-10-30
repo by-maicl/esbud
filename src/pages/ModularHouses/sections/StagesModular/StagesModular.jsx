@@ -4,14 +4,15 @@ import SectionTitle from '../../../../components/SectionTitle/SectionTitle'
 import SectionAside from '../../../../components/SectionAside/SectionAside';
 
 import modularStages from '../../../../data/modularStages'
+import { useTranslation } from 'react-i18next';
 
 function StagesModular() {
+    const { t } = useTranslation();
     return (
         <section className='stagesModular'>
             <div className='stagesModular__header'>
-                <SectionTitle variant='medium' className='stagesModular__title'>Етапи роботи</SectionTitle>
-                <SectionAside className='stagesModular__aside'>Блок-модуль — це основна структурна одиниця
-                    модульної споруди, що являє собою готовий до встановлення будівельний елемент. </SectionAside>
+                <SectionTitle variant='medium' className='stagesModular__title'>{t('modular.stagesTitle')}</SectionTitle>
+                <SectionAside className='stagesModular__aside'>{t('modular.stagesAside')}</SectionAside>
             </div>
 
             <div className='stagesModular__stages'>
@@ -22,8 +23,8 @@ function StagesModular() {
                         <p className='stagesModular__stage-number'>{stage.id}</p>
 
                         <div>
-                            <h3 className='stagesModular__stage-title'>{stage.title}</h3>
-                            <p className='stagesModular__stage-text'>{stage.text}</p>
+                            <h3 className='stagesModular__stage-title'>{t(`modularStages.${stage.id}.title`)}</h3>
+                            <p className='stagesModular__stage-text'>{t(`modularStages.${stage.id}.text`)}</p>
                         </div>
                     </div>
                 ))}

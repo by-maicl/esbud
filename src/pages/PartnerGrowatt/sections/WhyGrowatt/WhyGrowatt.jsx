@@ -5,45 +5,44 @@ import SectionAside from '../../../../components/SectionAside/SectionAside';
 import Reveal from '../../../../components/Reveal/Reveal';
 
 import homeExample from '../../../../assets/growatt/home-example.png'
+import { useTranslation } from 'react-i18next';
 
 function WhyGrowatt() {
+    const { t } = useTranslation();
     const reasonsGrowatt = [
         {
             id: 1,
-            title: 'Глобальна присутність',
-            text: 'Рішення Growatt встановлені у 180+ країнах.',
+            title: t('growattReasons.1.title'),
+            text: t('growattReasons.1.text'),
         },
         {
             id: 2,
-            title: 'Широкий асортимент',
-            text: 'Від побутових інверторів до рішень для комерційних та промислових об\'єктів',
+            title: t('growattReasons.2.title'),
+            text: t('growattReasons.2.text'),
         },
         {
             id: 3,
-            title: 'Розвиток власних технологій',
-            text: 'Growatt повідомляє про понад 1 000 R&D-інженерів та 283+ отриманих патенти',
+            title: t('growattReasons.3.title'),
+            text: t('growattReasons.3.text'),
         },
         {
             id: 4,
-            title: 'Інтелектуальний моніторинг',
-            text: 'Дистанційний контроль і діагностика обладнання.',
+            title: t('growattReasons.4.title'),
+            text: t('growattReasons.4.text'),
         },
         {
             id: 5,
-            title: 'Масштабованість',
-            text: 'Рішення можна підбирати відповідно до потреб приватного будинку, бізнесу або великого енергетичного об\'єкта.',
+            title: t('growattReasons.5.title'),
+            text: t('growattReasons.5.text'),
         },
     ];
 
     return (
         <section className='whyGrowatt'>
             <Reveal className='whyGrowatt__left'>
-                <SectionTitle className='growattText'>Чому Growatt?</SectionTitle>
-                <SectionAside className='growattText whyGrowatt__text'>Growatt пропонує широкий асортимент сонячних
-                    інверторів потужністю від 1 кВт до 2,52 МВт. Вони можуть
-                    використовуватися в поєднанні з рішеннями для зберігання
-                    енергії як для мережевих, так і для автономних систем.</SectionAside>
-                <img src={homeExample} alt="House with solar panels" className='whyGrowatt__img' />
+                <SectionTitle className='growattText'>{t('growatt.whyTitle')}</SectionTitle>
+                <SectionAside className='growattText whyGrowatt__text'>{t('growatt.whyAside')}</SectionAside>
+                <img src={homeExample} alt={t('home.system.modularTitle')} className='whyGrowatt__img' />
             </Reveal>
 
             <div className='whyGrowatt__right'>

@@ -3,10 +3,12 @@ import './HeroKstar.scss';
 import { ArrowRight } from 'lucide-react';
 import SectionTitle from '../../../../components/SectionTitle/SectionTitle';
 import Category from '../../../../components/Category/Category';
+import { useTranslation } from 'react-i18next';
 
 import kstarExample from '../../../../assets/kstar/kstar_example.png';
 
 function Hero() {
+    const { t } = useTranslation();
     const scrollToProjects = () => {
         document.getElementById('projects')?.scrollIntoView({
             behavior: 'smooth',
@@ -16,7 +18,7 @@ function Hero() {
 
     return (
         <section className='heroKstar'>
-            <p className='heroKstar__path'>Партнери / KSTAR</p>
+            <p className='heroKstar__path'>{t('kstar.heroPath')}</p>
 
             <div className='heroKstar__wrapp'>
                 <div className='heroKstar__info'>
@@ -26,13 +28,12 @@ function Hero() {
                         size={52}
                         className='heroKstar__title'
                     >
-                        Накопичення енергії. <br className="heroKstar__title-br" />
-                        Резервне живлення з KSTAR.
+                        {t('kstar.heroTitle')} <br className="heroKstar__title-br" />
+                        {t('kstar.heroTitleSuffix')}
                     </SectionTitle>
 
                     <p className='heroKstar__desc'>
-                        Акумуляторні системи та гібридні інвертори для дому й бізнесу.
-                        Оберіть рішення під ваші потреби в резервному живленні.
+                        {t('kstar.heroText')}
                     </p>
 
                     <button
@@ -40,7 +41,7 @@ function Hero() {
                         className='heroKstar__btn'
                         onClick={scrollToProjects}
                     >
-                        <span>Підібрати систему KSTAR</span>
+                        <span>{t('kstar.selectSystem')}</span>
                         <span className='heroKstar__btn-icon'>
                             <ArrowRight size={18} />
                         </span>
@@ -48,20 +49,20 @@ function Hero() {
 
                     {/* Десктопные плашки категорий */}
                     <div className='heroKstar__using'>
-                        <Category>Для дому</Category>
-                        <Category>Для бізнесу</Category>
-                        <Category>Резервне живлення</Category>
+                        <Category>{t('kstar.home')}</Category>
+                        <Category>{t('kstar.business')}</Category>
+                        <Category>{t('kstar.backup')}</Category>
                     </div>
                 </div>
 
                 <div className='heroKstar__img'>
-                    <img src={kstarExample} alt="KSTAR система" />
-                    <p>KSTAR · Система для приватного будинку</p>
+                    <img src={kstarExample} alt={t('kstar.imageAlt')} />
+                    <p>{t('kstar.imageText')}</p>
                 </div>
 
                 {/* Мобильный текстовый список категорий по макету */}
                 <p className='heroKstar__using-mobile'>
-                    Для дому · Для бізнесу · Резервне живлення
+                    {t('kstar.home')} · {t('kstar.business')} · {t('kstar.backup')}
                 </p>
             </div>
         </section>

@@ -6,15 +6,15 @@ import Reveal from '../../../../components/Reveal/Reveal';
 import Card from '../../../../components/Card/Card';
 
 import directionsGrowatt from '../../../../data/directionsGrowatt';
+import { useTranslation } from 'react-i18next';
 
 function DirectionsGrowatt() {
+    const { t } = useTranslation();
     return (
         <section className='directionsGrowatt'>
             <div className='directionsGrowatt__header'>
-                <SectionTitle className='growattText' variant='medium'>Основні напрямки Growatt</SectionTitle>
-                <SectionAside className='directionsGrowatt__header-subtitle'>До портфеля компанії входять сонячні інвертори, системи
-                    накопичення енергії, зарядні пристрої для електромобілів та рішення
-                    для інтелектуального керування енергією. </SectionAside>
+                <SectionTitle className='growattText' variant='medium'>{t('growatt.directionsTitle')}</SectionTitle>
+                <SectionAside className='directionsGrowatt__header-subtitle'>{t('growatt.directionsAside')}</SectionAside>
             </div>
 
             <div className='directionsGrowatt__cards'>
@@ -22,10 +22,10 @@ function DirectionsGrowatt() {
                     <Reveal key={el.id} delay={150 * index}>
                         <Card
                             icon={el.icon}
-                            title={el.title}
+                            title={t(`directionsGrowatt.${el.id}.title`)}
                             variant='growatt'
                         >
-                            {el.text}
+                            {t(`directionsGrowatt.${el.id}.text`)}
                         </Card>
                     </Reveal>
                 ))}

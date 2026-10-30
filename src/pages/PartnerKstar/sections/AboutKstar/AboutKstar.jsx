@@ -6,23 +6,22 @@ import SectionSubtitle from '../../../../components/SectionSubtitle/SectionSubti
 import Reveal from '../../../../components/Reveal/Reveal';
 
 import kstarAbout from '../../../../data/kstarAbout';
+import { useTranslation } from 'react-i18next';
 
 function AboutKstar() {
+    const { t } = useTranslation();
     return (
         <section className='aboutKstar'>
             
 
             <div className='aboutKstar__header'>
-                <SectionTitle>Про нас</SectionTitle>
+                <SectionTitle>{t('kstar.aboutTitle')}</SectionTitle>
                 <div className='aboutKstar__header-content'>
                     <SectionSubtitle className='aboutKstar__header-subtitle'>
-                        KSTAR є провідним брендом в галузі силової електроніки та нової енергетики
+                        {t('kstar.aboutSubtitle')}
                     </SectionSubtitle>
                     <p className='aboutKstar__header-description'>
-                        Бренд KSTAR спеціалізується на виготовленні силової
-                        електроніки та нової енергетики, яка успішно впроваджується
-                        у критично важливу інфраструктуру центрів обробки даних,
-                        модульних та фотоелектричних рішеннях, а також, рішеннях для зберігання електричної енергії.
+                        {t('kstar.aboutText')}
                     </p>
                 </div>
             </div>
@@ -32,14 +31,14 @@ function AboutKstar() {
                     <Reveal key={el.id || index} delay={index * 150} className='aboutKstar__card-reveal'>
                         <div className='aboutKstar__card'>
                             <div className='aboutKstar__card-img-wrap'>
-                                <img src={el.img} alt={el.title} />
+                                <img src={el.img} alt={t(`kstarAbout.${el.id}.title`)} />
                             </div>
                             <div className='aboutKstar__card-info'>
                                 <div className='aboutKstar__card-top'>
-                                    <h4 className='aboutKstar__card-title'>{el.title}</h4>
-                                    <p className='aboutKstar__card-text'>{el.subtitle}</p>
+                                    <h4 className='aboutKstar__card-title'>{t(`kstarAbout.${el.id}.title`)}</h4>
+                                    <p className='aboutKstar__card-text'>{t(`kstarAbout.${el.id}.subtitle`)}</p>
                                 </div>
-                                <p className='aboutKstar__card-description'>{el.description}</p>
+                                <p className='aboutKstar__card-description'>{t(`kstarAbout.${el.id}.description`)}</p>
                             </div>
                         </div>
                     </Reveal>

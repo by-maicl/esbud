@@ -8,8 +8,10 @@ import ArrowButton from '../../../../components/ArrowButton/ArrowButton';
 import CardImg from '../../../../components/CardImg/CardImg';
 
 import growattProducts from '../../../../data/growattProducts';
+import { useTranslation } from 'react-i18next';
 
 function ProductsGrowatt() {
+    const { t } = useTranslation();
     const [activeIndex, setActiveIndex] = useState(0);
     const [slideOffset, setSlideOffset] = useState(0);
 
@@ -82,16 +84,14 @@ function ProductsGrowatt() {
         <section className='productsGrowatt' id='products'>
             <div className='productsGrowatt__header'>
                 <SectionTitle variant='medium' className='growattText'>
-                    Продукція Growatt
+                    {t('growatt.productsTitle')}
                 </SectionTitle>
                 <div className='productsGrowatt__header-text'>
                     <SectionAside className='growattText'>
-                        Growatt дозволяє об'єднати генерацію, накопичення,
-                        споживання та заряджання електромобіля в єдину енергетичну систему.
+                        {t('growatt.productsAside')}
                     </SectionAside>
                     <p className='productsGrowatt__mobile-note'>
-                        Система може конфігуруватися під різні потреби та масштабуватися
-                        відповідно до необхідної потужності й ємності.
+                        {t('growatt.productsNote')}
                     </p>
                 </div>
             </div>
@@ -106,8 +106,7 @@ function ProductsGrowatt() {
                         /{String(totalSlides).padStart(2, '0')}
                     </p>
                     <SectionAside size={14} className='productsGrowatt__slide-description growattText'>
-                        Система може конфігуруватися під різні потреби
-                        та масштабуватися відповідно до необхідної потужності й ємності.
+                        {t('growatt.productsNote')}
                     </SectionAside>
                     <div className='productsGrowatt__slide-buttons'>
                         <ArrowButton
@@ -138,11 +137,11 @@ function ProductsGrowatt() {
                             >
                                 <CardImg
                                     variant='growatt'
-                                    name={project.name}
-                                    title={project.title}
+                                    name={t(`growattProducts.${project.id}.name`)}
+                                    title={t(`growattProducts.${project.id}.title`)}
                                     img={project.img}
                                 >
-                                    {project.description}
+                                    {t(`growattProducts.${project.id}.description`)}
                                 </CardImg>
                             </div>
                         ))}
@@ -164,11 +163,11 @@ function ProductsGrowatt() {
                         >
                             <CardImg
                                 variant='growatt'
-                                name={project.name}
-                                title={project.title}
+                                name={t(`growattProducts.${project.id}.name`)}
+                                title={t(`growattProducts.${project.id}.title`)}
                                 img={project.img}
                             >
-                                {project.description}
+                                {t(`growattProducts.${project.id}.description`)}
                             </CardImg>
                         </div>
                     ))}
@@ -182,7 +181,7 @@ function ProductsGrowatt() {
                             type='button'
                             className={`productsGrowatt__dot ${activeIndex === index ? 'active' : ''}`}
                             onClick={() => scrollToIndex(index)}
-                            aria-label={`Перейти до слайду ${index + 1}`}
+                            aria-label={t('growatt.productDot', { number: index + 1 })}
                         />
                     ))}
                 </div>

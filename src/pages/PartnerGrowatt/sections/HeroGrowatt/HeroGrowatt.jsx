@@ -3,10 +3,12 @@ import './HeroGrowatt.scss';
 import { ArrowRight } from 'lucide-react';
 import SectionTitle from '../../../../components/SectionTitle/SectionTitle';
 import Category from '../../../../components/Category/Category';
+import { useTranslation } from 'react-i18next';
 
 import growattExample from '../../../../assets/growatt/inverter.png';
 
 function Hero() {
+    const { t } = useTranslation();
     const scrollToProjects = () => {
         document.getElementById('products')?.scrollIntoView({
             behavior: 'smooth',
@@ -16,7 +18,7 @@ function Hero() {
 
     return (
         <section className='heroGrowatt'>
-            <p className='heroGrowatt__path'>Партнери / Growatt</p>
+            <p className='heroGrowatt__path'>{t('growatt.heroPath')}</p>
 
             <div className='heroGrowatt__wrapp'>
                 <div className='heroGrowatt__info'>
@@ -25,13 +27,12 @@ function Hero() {
                         size={52}
                         className='heroGrowatt__title'
                     >
-                        Сонячні інвертори <br className="heroGrowatt__title-br" />
-                        та накопичення енергії Growatt
+                        {t('growatt.heroTitle')} <br className="heroGrowatt__title-br" />
+                        {t('growatt.heroTitleSuffix')}
                     </SectionTitle>
 
                     <p className='heroGrowatt__desc'>
-                        Інвертори й системи накопичення для сонячної енергії. Підберіть
-                        обладнання під потреби вашого дому або бізнесу.
+                        {t('growatt.heroText')}
                     </p>
 
                     <button
@@ -39,7 +40,7 @@ function Hero() {
                         className='heroGrowatt__btn'
                         onClick={scrollToProjects}
                     >
-                        <span>Підібрати обладнання Growatt</span>
+                        <span>{t('growatt.selectEquipment')}</span>
                         <span className='heroGrowatt__btn-icon'>
                             <ArrowRight size={18} />
                         </span>
@@ -47,25 +48,25 @@ function Hero() {
 
                     {/* Десктопные кнопки категорий */}
                     <div className='heroGrowatt__using'>
-                        <Category variant='secondary'>Інвертори</Category>
-                        <Category variant='secondary'>Накопичення енергії</Category>
-                        <Category variant='secondary'>Моніторинг</Category>
+                        <Category variant='secondary'>{t('growatt.inverters')}</Category>
+                        <Category variant='secondary'>{t('growatt.storage')}</Category>
+                        <Category variant='secondary'>{t('growatt.monitoring')}</Category>
                     </div>
                 </div>
 
                 {/* Белая карточка с инверторами */}
                 <div className='heroGrowatt__img'>
                     <div className='heroGrowatt__img-header'>
-                        <p className='heroGrowatt__img-name'>Сонячні інвертори</p>
+                        <p className='heroGrowatt__img-name'>{t('growatt.imageTitle')}</p>
                         <div className='heroGrowatt__img-particle'></div>
                     </div>
-                    <img src={growattExample} alt="Growatt инверторы" />
-                    <p className='heroGrowatt__img-info'>Обладнання для вашої енергосистеми</p>
+                    <img src={growattExample} alt={t('growatt.imageAlt')} />
+                    <p className='heroGrowatt__img-info'>{t('growatt.imageText')}</p>
                 </div>
 
                 {/* Текстовые категории для мобильной версии */}
                 <p className='heroGrowatt__using-mobile'>
-                    Інвертори · Накопичення енергії · Моніторинг
+                    {t('growatt.inverters')} · {t('growatt.storage')} · {t('growatt.monitoring')}
                 </p>
             </div>
         </section>

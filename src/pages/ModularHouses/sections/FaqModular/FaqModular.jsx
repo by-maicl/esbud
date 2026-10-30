@@ -8,8 +8,10 @@ import SectionAside from '../../../../components/SectionAside/SectionAside';
 import modularFaq from '../../../../data/modularFaq';
 
 import { Plus, X } from 'lucide-react'; // Заменили Minus на X
+import { useTranslation } from 'react-i18next';
 
 function FaqModular() {
+    const { t } = useTranslation();
     const [activeQuestion, setActiveQuestion] = useState(null);
 
     const toggleQuestion = (id) => {
@@ -22,12 +24,11 @@ function FaqModular() {
         <section className="faqModular">
             <div className="faqModular__header">
                 <SectionTitle variant="medium">
-                    Що варто знати до старту
+                    {t('modular.faqTitle')}
                 </SectionTitle>
 
                 <SectionAside>
-                    Відповіді описують загальний підхід.
-                    Конкретні параметри залежать від проєкту та погоджених вихідних даних.
+                    {t('modular.faqAside')}
                 </SectionAside>
             </div>
 
@@ -47,7 +48,7 @@ function FaqModular() {
                                 aria-expanded={isOpen}
                             >
                                 <h3 className="faqModular__question-title">
-                                    {question.question}
+                                    {t(`modularFaq.${question.id}.question`)}
                                 </h3>
 
                                 {/* Теперь при открытии рендерится полноценный крестик X */}
@@ -59,7 +60,7 @@ function FaqModular() {
                                 inert={!isOpen}
                             >
                                 <p className="faqModular__question-answer">
-                                    {question.answer}
+                                    {t(`modularFaq.${question.id}.answer`)}
                                 </p>
                             </div>
                         </div>

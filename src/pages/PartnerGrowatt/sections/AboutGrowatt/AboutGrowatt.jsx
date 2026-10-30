@@ -4,26 +4,28 @@ import { Globe, Users, Network } from 'lucide-react';
 import SectionTitle from '../../../../components/SectionTitle/SectionTitle';
 import SectionSubtitle from '../../../../components/SectionSubtitle/SectionSubtitle';
 import Reveal from '../../../../components/Reveal/Reveal';
+import { useTranslation } from 'react-i18next';
 
 function AboutGrowatt() {
+    const { t } = useTranslation();
     const statsData = [
         {
             id: 1,
             title: '180+',
-            subtitle: 'Країн',
+            subtitle: t('growatt.countries'),
             icon: Globe,
         },
         {
             id: 2,
             title: '6M+',
-            desktopTitle: '6 мільйонів',
-            subtitle: 'Користувачів',
+            desktopTitle: t('growatt.millionUsers'),
+            subtitle: t('growatt.users'),
             icon: Users,
         },
         {
             id: 3,
             title: '65+',
-            subtitle: "Типових об'єктів по всьому світу",
+            subtitle: t('growatt.objects'),
             icon: Network,
         },
     ];
@@ -32,15 +34,12 @@ function AboutGrowatt() {
         <section className='aboutGrowatt'>
             {/* Текстовая часть (на мобилке идет первой) */}
             <Reveal delay={150} className='aboutGrowatt__info'>
-                <SectionTitle className='growattText'>Про нас</SectionTitle>
+                <SectionTitle className='growattText'>{t('growatt.aboutTitle')}</SectionTitle>
                 <SectionSubtitle className='aboutGrowatt__subtitle'>
-                    ТОВ «ЕНЕРГОСОЛАРБУД» є офіційним представником обладнання
-                    GROWATT - глобального постачальника рішень у сфері розподіленої енергетики.
+                    {t('growatt.aboutSubtitle')}
                 </SectionSubtitle>
                 <p className='aboutGrowatt__description'>
-                    Компанія Growatt була заснована у 2011 році в Шеньчжені, Китай,
-                    та спеціалізується на розробці й виробництві обладнання для генерації, накопичення
-                    та ефективного використання електроенергії
+                    {t('growatt.aboutText')}
                 </p>
             </Reveal>
 

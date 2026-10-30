@@ -6,19 +6,21 @@ import CardHorizontal from '../../../../components/CardHorizontal/CardHorizontal
 import Reveal from '../../../../components/Reveal/Reveal';
 
 import { House, Sun } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 function StartModular() {
+    const { t } = useTranslation();
     const modularStart = [
         {
             id: 1,
-            title: 'Модульні будинки',
-            text: 'Житлові, гостьові та комерційні формати з готовою просторовою логікою.',
+            title: t('modular.startCards.1.title'),
+            text: t('modular.startCards.1.text'),
             icon: House,
         },
         {
             id: 2,
-            title: 'Сонячні рішення',
-            text: 'Мережеві, гібридні й масштабовані системи для різних профілів споживання.',
+            title: t('modular.startCards.2.title'),
+            text: t('modular.startCards.2.text'),
             icon: Sun,
         },
     ];
@@ -26,10 +28,9 @@ function StartModular() {
     return (
         <section className='startModular'>
             <div className='startModular__header'>
-                <SectionTitle variant='medium'>Почніть із потрібного сценарію</SectionTitle>
+                <SectionTitle variant='medium'>{t('modular.startTitle')}</SectionTitle>
                 <SectionAside>
-                    Базові продукти допомагають зорієнтуватися. Площа, комплектація,
-                    потужність та інженерія уточнюються для конкретного об’єкта.
+                    {t('modular.startAside')}
                 </SectionAside>
             </div>
 

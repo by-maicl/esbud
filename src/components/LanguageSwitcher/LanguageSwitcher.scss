@@ -1,0 +1,54 @@
+@use '../../styles/variables' as *;
+
+.language-switcher {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+
+    padding: 10px 4px;
+    border: 1px solid rgba($primary-font-color, 0.15);
+    border-radius: 100px;
+    margin-right: 10px;
+
+    background: rgba($primary-font-color, 0.03);
+
+    &__btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        min-width: 42px;
+        height: 32px;
+        padding: 0 10px;
+
+        border: none;
+        border-radius: 100px;
+        background: transparent;
+
+        color: rgba($primary-font-color, 0.55);
+        font-family: inherit;
+        font-size: 14px;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+
+        cursor: pointer;
+
+        transition:
+            background-color 0.25s ease,
+            color 0.25s ease;
+
+        &:hover:not(.active) {
+            color: $primary-font-color;
+        }
+
+        &.active {
+            background: $primary-color;
+            color: $secondary-font-color;
+        }
+
+        &:focus-visible {
+            outline: 2px solid $primary-color;
+            outline-offset: 3px;
+        }
+    }
+}

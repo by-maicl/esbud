@@ -7,6 +7,8 @@ import Button from '../../components/Button/Button.jsx';
 import logo from '../../assets/logo.png';
 import './Header.scss';
 
+import LanguageSwitcher from '../../components/LanguageSwitcher/LanguageSwitcher';
+
 function Header() {
     const location = useLocation();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -54,8 +56,7 @@ function Header() {
             <Link to="/" className="header__logo">
                 <img src={logo} alt="Logo" className="header__logo-img" />
                 <span>
-                    {/* ТОВ <br /> ЕНЕРГОСОЛАРБУД */}
-                    {t('header.company')}
+                    {t('header.companyPrefix')} <br /> {t('header.companyName')}
                 </span>
             </Link>
 
@@ -99,6 +100,8 @@ function Header() {
             </nav>
 
             <div className="header__desktop-btn">
+                <LanguageSwitcher />
+
                 <Link to="/#contacts">
                     <Button style={{ padding: '6px 12px 6px 20px' }}>{t('header.contact')}</Button>
                 </Link>
@@ -108,7 +111,7 @@ function Header() {
                 type="button"
                 className="header__burger-btn"
                 onClick={() => setIsMenuOpen(true)}
-                aria-label="Відкрити меню"
+                aria-label={t('header.openMenu')}
             >
                 <Menu size={28} />
             </button>
@@ -124,7 +127,7 @@ function Header() {
                         type="button"
                         className="header__close-btn"
                         onClick={() => setIsMenuOpen(false)}
-                        aria-label="Закрити меню"
+                        aria-label={t('header.closeMenu')}
                     >
                         <X size={26} />
                     </button>
@@ -182,12 +185,13 @@ function Header() {
                     </button>
                 </div>
 
-                <button type="button" className="header__mobile-action-btn">
-                    <span>{t('header.contact')}</span>
-                    <span className="header__action-circle">
-                        <ArrowRight size={16} />
-                    </span>
-                </button>
+                <div className="header__mobile-action-btn">
+                    <Link
+                        onClick={() => setIsMenuOpen(false)}
+                        to="/#contacts">
+                        <Button>{t('header.contact')}</Button>
+                    </Link>
+                </div>
             </div>
         </header>
     );

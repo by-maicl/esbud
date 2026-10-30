@@ -8,8 +8,10 @@ import ArrowButton from '../../../../components/ArrowButton/ArrowButton';
 import CardImg from '../../../../components/CardImg/CardImg';
 
 import kstarProjects from '../../../../data/kstarProjects';
+import { useTranslation } from 'react-i18next';
 
 function ProjectsKstar() {
+    const { t } = useTranslation();
     const [activeIndex, setActiveIndex] = useState(0);
     const [slideOffset, setSlideOffset] = useState(0);
 
@@ -79,11 +81,8 @@ function ProjectsKstar() {
     return (
         <section className='projectsKstar' id='projects'>
             <div className='projectsKstar__header'>
-                <SectionTitle variant='medium'>KSTAR в Україні</SectionTitle>
-                <SectionAside className='projectsKstar__header-aside'>
-                    Система може конфігуруватися під різні потреби та масштабуватися
-                    відповідно до необхідної потужності й ємності.
-                </SectionAside>
+                <SectionTitle variant='medium'>{t('kstar.projectsTitle')}</SectionTitle>
+                <SectionAside className='projectsKstar__header-aside'>{t('kstar.projectsAside')}</SectionAside>
             </div>
 
             {/* ДЕСКТОПНЫЙ БЛОК */}
@@ -96,7 +95,7 @@ function ProjectsKstar() {
                         /{String(totalSlides).padStart(2, '0')}
                     </p>
                     <SectionAside size={14} className='projectsKstar__slide-description'>
-                        Система може конфігуруватися під різні потреби та масштабуватися відповідно до необхідної потужності й ємності.
+                        {t('kstar.projectsAside')}
                     </SectionAside>
                     <div className='projectsKstar__slide-buttons'>
                         <ArrowButton
@@ -121,11 +120,11 @@ function ProjectsKstar() {
                         {kstarProjects.map((project) => (
                             <div className="projectsKstar__item" key={project.id}>
                                 <CardImg
-                                    name={project.name}
-                                    title={project.title}
+                                    name={t(`kstarProjects.${project.id}.name`)}
+                                    title={t(`kstarProjects.${project.id}.title`)}
                                     img={project.img}
                                 >
-                                    {project.description}
+                                    {t(`kstarProjects.${project.id}.description`)}
                                 </CardImg>
                             </div>
                         ))}
@@ -143,11 +142,11 @@ function ProjectsKstar() {
                     {kstarProjects.map((project) => (
                         <div className='projectsKstar__mobile-card' key={`mob-${project.id}`}>
                             <CardImg
-                                name={project.name}
-                                title={project.title}
+                                name={t(`kstarProjects.${project.id}.name`)}
+                                title={t(`kstarProjects.${project.id}.title`)}
                                 img={project.img}
                             >
-                                {project.description}
+                                {t(`kstarProjects.${project.id}.description`)}
                             </CardImg>
                         </div>
                     ))}
@@ -161,7 +160,7 @@ function ProjectsKstar() {
                             type='button'
                             className={`projectsKstar__dot ${activeIndex === index ? 'active' : ''}`}
                             onClick={() => scrollToIndex(index)}
-                            aria-label={`Перейти до слайду ${index + 1}`}
+                            aria-label={t('kstar.projectDot', { number: index + 1 })}
                         />
                     ))}
                 </div>
